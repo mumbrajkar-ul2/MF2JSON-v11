@@ -1,0 +1,35 @@
+---
+description: Conventions for generating MES-to-CMdS Medicare Integration Specifications (Medicaid_Rule tagging, cite-never-invent, provenance)
+alwaysApply: true
+---
+
+# Medicare Integration Spec Conventions
+
+Shared guardrails for Integration Specification work. Phase-specific rules:
+
+- Research: `@.cursor/rules/integration-spec-research.mdc` (invoke in Turn 1)
+- Writer: `@.cursor/rules/integration-spec-writer.mdc` (invoke in Turn 2)
+
+Full procedures: `prompts/integration-spec-research.md` and `prompts/integration-spec-write.md`.
+
+## Rule library
+- Authoritative validation rules: `rules/<domain>/data-elements.md` (+ `.csv`).
+- Valid-value-list **members**: `rules/<domain>/value-lists/*.csv`.
+- Read generated text, never binary `source.xlsx`. Pin dictionary version from `MANIFEST.yaml`.
+
+## Cite, never invent
+- Tag every applied data-element rule as **`Medicaid_Rule (ELG.xxx.xxx)`** (System DE Number).
+- Tag every applied VVL code row the same way.
+- NEVER fabricate enum/VVL codes, regex patterns, sentinels, or business rules.
+- Stubbed lists (`status = TODO`) → GAP; CONFIRMED lists → document from research `vvl_members` or VVL CSV.
+
+## Provenance
+- Research phase: every fact needs `source_ref` in YAML.
+- Writer phase: transcribe research only; do not re-read raw artifacts.
+
+## Two-phase workflow
+1. **Research** → `research/Integration_Research_<Flow>.yaml` (validate with `tools/validate_research.py`).
+2. Human review of research artifact.
+3. **Writer** → `spec/*.md` + `.docx` (validate with `tools/validate_spec_against_research.py`, then `md_to_docx.py`).
+
+Use separate chats for Research and Writer.

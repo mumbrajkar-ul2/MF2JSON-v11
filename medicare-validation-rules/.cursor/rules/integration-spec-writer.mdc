@@ -1,0 +1,36 @@
+---
+description: Writer phase — transcribe research YAML to spec prose only; validator gate before docx
+alwaysApply: false
+---
+
+# Integration Spec — Writer Phase
+
+Invoke this rule when running `@prompts/integration-spec-write.md` (Turn 2).
+
+## Input restriction
+- Use **only** `@research/Integration_Research_<Flow>.yaml` and the writer prompt.
+- Do **not** re-read `@source/`, `@target/`, `@rules/`, or `@value-lists/` unless fixing validator errors cited in research refs.
+
+## Hard prohibitions
+- Do not add field mappings not in research `field_mappings`.
+- Do not add VVL codes not in research `vvl_members`.
+- Do not add `ASM-NN` unless present in research `assumptions` (expected empty on first write).
+- Do not add GAP IDs not in research `gaps`.
+
+## Required discipline
+- §3: one row per research `field_mappings` entry; echo `source_ref` / `target_ref`.
+- §2.2: every research `gaps[].id` must appear.
+- §4.D/E: VVL tables from research `vvl_members` only; per-row **`Medicaid_Rule (ELG.xxx.xxx)`**.
+- §2 mandatory between Executive Summary and Mapping Matrix.
+- Tag rules as **`Medicaid_Rule (ELG.xxx.xxx)`**; record dictionary version from research `meta`.
+
+## Pipeline architecture (spec content)
+- Raw `byte[]` ingest → boundary-safe slice (`Math.min`) → `ISO_8859_1` + `.trim()` → MapStruct.
+- `@Named` / `qualifiedByName` must match character-for-character.
+
+## Deliverables and gates
+1. Write spec `.md` to integration project `spec/` folder.
+2. Run `python tools/validate_spec_against_research.py <research.yaml> <spec.md>` — must pass.
+3. Run `python tools/md_to_docx.py <spec.md>` — mandatory `.docx` sibling.
+
+If Pandoc is missing, install and retry — do not finish without `.docx` or explicit failure message.

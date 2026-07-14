@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medicare-validation-rules/schemas/integration-research.schema.json",
+  "title": "Integration Spec Research Artifact",
+  "description": "Structured research output for the Research phase of two-phase Integration Specification generation. Every fact must cite source_ref.",
+  "type": "object",
+  "required": ["meta", "field_mappings", "gaps", "assumptions", "vvl_members"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["flow", "dictionary_version", "sources"],
+      "additionalProperties": false,
+      "properties": {
+        "flow": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Integration flow name (e.g. Member Eligibility)"
+        },
+        "dictionary_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "T-MSIS dictionary version from MANIFEST.yaml"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Relative path to input artifact from integration project root"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "description": "SHA-256 hex digest of the artifact at research time"
+              }
+            }
+          }
+        }
+      }
+    },
+    "field_mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_field",
+          "source_ref",
+          "target_attribute",
+          "target_ref",
+          "derivation",
+          "java_type"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source_field": {
+            "type": "string",
+            "minLength": 1,
+            "description": "MMIS/COBOL field name from source layout"
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": ".+:.+",
+            "description": "Provenance: file:line or file:Lrow (e.g. MEMBERELIGIBILITY.csv:L30)"
+          },
+          "target_attribute": {
+            "type": "string",
+            "minLength": 1,
+            "description": "CMdS JSON property name from target VO"
+          },
+          "target_ref": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": ".+:.+",
+            "description": "Provenance in target VO (e.g. MemberEligibilityVO.md:L126)"
+          },
+          "derivation": {
+            "type": "string",
+            "enum": ["DIRECT", "INFERRED", "UNMAPPED"]
+          },
+          "java_type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Target Java type from VO (String, LocalDate, BigDecimal, etc.)"
+          },
+          "t_msis_rule": {
+            "type": ["string", "null"],
+            "pattern": "^ELG\\.\\d{3}\\.\\d{3}$",
+            "description": "T-MSIS data element id when applicable; null if none"
+          },
+          "vvl_file": {
+            "type": ["string", "null"],
+            "description": "Value-list CSV filename when applicable; null if none"
+          },
+          "picture": {
+            "type": "string",
+            "description": "COBOL PIC clause from source layout"
+          },
+          "start_pos": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end_pos": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "length": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "topic", "evidence", "owner", "priority"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^GAP-\\d{2}$"
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Why this is missing from artifacts — cite files searched"
+          },
+          "owner": {
+            "type": "string",
+            "enum": ["BA", "MMIS SME", "CMdS API", "Sec/Compliance", "Operations"]
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["P1", "P2", "P3"]
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Must be empty at research time; BAs fill in a separate step",
+      "items": {
+        "type": "object",
+        "required": ["id", "resolves_gap", "topic", "placeholder", "rationale"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ASM-\\d{2}$"
+          },
+          "resolves_gap": {
+            "type": "string",
+            "pattern": "^GAP-\\d{2}$"
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "placeholder": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "vvl_members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["de", "file", "rows"],
+        "additionalProperties": false,
+        "properties": {
+          "de": {
+            "type": "string",
+            "pattern": "^ELG\\.\\d{3}\\.\\d{3}$"
+          },
+          "file": {
+            "type": "string",
+            "minLength": 1,
+            "description": "VVL CSV filename (e.g. sex.csv)"
+          },
+          "rows": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["code", "description", "source_ref"],
+              "additionalProperties": false,
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "source_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": ".+:.+",
+                  "description": "Provenance in VVL CSV (e.g. sex.csv:L2)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

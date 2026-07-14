@@ -1,0 +1,15 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+01,"Legally Married (to opposite sex), spouse present",ELG.003.034,Marital Status List,CONFIRMED
+02,"Legally Married (to opposite sex), spouse absent",ELG.003.034,Marital Status List,CONFIRMED
+03,"Legally Married (to same sex), spouse present",ELG.003.034,Marital Status List,CONFIRMED
+04,"Legally Married (to same sex), spouse absent",ELG.003.034,Marital Status List,CONFIRMED
+05,"Partnered or in Civil Union (to opposite sex), spouse present",ELG.003.034,Marital Status List,CONFIRMED
+06,"Partnered or in Civil Union (to opposite sex), spouse absent",ELG.003.034,Marital Status List,CONFIRMED
+07,"Partnered or in Civil Union (to same sex), spouse present",ELG.003.034,Marital Status List,CONFIRMED
+08,"Partnered or in Civil Union (to same sex), spouse absent",ELG.003.034,Marital Status List,CONFIRMED
+09,Legally separated (and not married or partnered),ELG.003.034,Marital Status List,CONFIRMED
+10,Divorced (and not currently married or partnered),ELG.003.034,Marital Status List,CONFIRMED
+11,Separated (and not currently married or partnered),ELG.003.034,Marital Status List,CONFIRMED
+12,Widower/Widow (and not currently married or partnered),ELG.003.034,Marital Status List,CONFIRMED
+13,Never married/partnered,ELG.003.034,Marital Status List,CONFIRMED
+14,Other,ELG.003.034,Marital Status List,CONFIRMED

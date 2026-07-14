@@ -1,0 +1,9 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+01,Individuals State-defined family income is from 0 to 100% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+02,Individuals State-defined family income is from 101 to 133% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+03,Individuals State-defined family income is from 134 to 150% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+04,Individuals State-defined family income is from 151 to 200% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+05,Individuals State-defined family income is from 201 to 255% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+06,Individuals State-defined family income is from 256 to 300% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+07,Individuals State-defined family income is from 301 to 400% of the FPL,ELG.003.038,Income Code List,CONFIRMED
+08,Individuals State-defined family income is over 400% of the FPL,ELG.003.038,Income Code List,CONFIRMED

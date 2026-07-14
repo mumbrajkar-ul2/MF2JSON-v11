@@ -1,0 +1,27 @@
+meta:
+  flow: Member Eligibility
+  dictionary_version: "4.0.33"
+  sources:
+    - path: source/MEMBERELIGIBILITY.csv
+      sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+
+field_mappings:
+  - source_field: MBR-GNDR-CD
+    source_ref: ""
+    target_attribute: gender
+    target_ref: "MemberEligibilityVO.md:L126"
+    derivation: DIRECT
+    java_type: String
+    t_msis_rule: ELG.999.999
+    vvl_file: null
+
+gaps: []
+
+assumptions:
+  - id: ASM-01
+    resolves_gap: GAP-01
+    topic: Test assumption
+    placeholder: "Y"
+    rationale: "Should not exist in research phase"
+
+vvl_members: []

@@ -1,0 +1,87 @@
+Federal authoritative sources,
+,
+Source,Use it for
+Medicaid.gov,"Federal Medicaid policy, SPAs, waivers, eligibility, benefits, managed care, program integrity"
+CMS / CMCS Federal Policy Guidance,"State Medicaid Director Letters, SHO letters, CMCS Informational Bulletins, official guidance updates (Medicaid)"
+T-MSIS Data Guide,"Member, provider, claims, managed care, third-party liability, eligibility file layouts, segment definitions, data dictionaries (Medicaid)"
+Data.Medicaid.gov,Public Medicaid datasets and API-accessible reference data (data.medicaid.gov)
+CMS Medicaid Enterprise Certification / OBC / SMC guidance,"MES certification, outcomes, MITA-style modularity, enhanced funding, certification evidence (Medicaid)"
+Medicaid State Plan Amendments repository,"State plan coverage, reimbursement, eligibility, benefit changes (Medicaid)"
+CMS 1915 / 1115 waiver resources,"Waiver programs, HCBS, managed care authority, demonstrations"
+CMS NCCI Medicaid,"Medicaid claims edit rules, PTP edits, MUEs; note that states/vendors must use secure RISSNET files for production adjudication (Centers for Medicare & Medicaid Services)"
+CMS Medicaid Drug Rebate Program,"Pharmacy, drug rebate, covered outpatient drugs, AMP, FUL, drug policy (Medicaid)"
+eCFR / Federal Register,Binding regulations and rule changes; especially 42 CFR Medicaid rules (eCFR)
+X12 / Washington Publishing Company,"HIPAA EDI standards: 837, 835, 834, 270/271, 276/277, 278. Often licensed, not fully crawlable"
+CAQH CORE,"Operating rules for eligibility, claim status, EFT/ERA, prior authorization workflows"
+NCPDP,"Pharmacy transaction standards, NCPDP D.0, SCRIPT, pharmacy claim/payment logic"
+HL7 / FHIR / Da Vinci,"Modern API standards for member, provider, coverage, prior authorization, clinical data exchange"
+NUCC Taxonomy Code Set,Provider taxonomy values
+NPPES NPI Registry,Provider NPI and provider demographic reference
+CDC / ICD / NCHS,ICD-10-CM diagnosis code updates
+CMS HCPCS,HCPCS Level II procedure/supply codes
+AMA CPT,"CPT procedure codes; licensed source, not freely crawlable"
+ResDAC / MACPAC,Secondary but useful interpretive sources; not primary authority
+,
+Virginia authoritative sources,
+,
+Source,Use it for
+Virginia DMAS main site,"State Medicaid policy, programs, rates, state plan, waivers, managed care, provider resources"
+Virginia Medicaid MES portal,"Provider-facing MES information, manuals, memos, bulletins, EDI/EPS/CRMS/PRSS resources (Virginia Medicaid)"
+Virginia Medicaid Provider Manuals Library,"Billing rules, service-specific coverage, claims instructions, provider requirements; manuals are updated regularly (Virginia Medicaid)"
+Virginia Medicaid Memos & Bulletins,"Most important change-feed for policy, billing, provider, waiver, managed care, and implementation updates (Virginia Medicaid)"
+DMAS State Plan,Virginia’s official Medicaid operating agreement with CMS (Virginia Medicaid)
+DMAS Approved SPAs / Filed SPAs,"State-specific eligibility, benefit, reimbursement, and operational changes (Virginia Medicaid)"
+DMAS Waivers / 1115 / 1915(c) pages,"HCBS waiver programs, CCC Plus, DD waivers, demonstration waiver updates (Virginia Medicaid)"
+Cardinal Care Managed Care resources,"MCO contracts, managed care requirements, encounter, member, plan, care management, compliance requirements (Virginia Medicaid)"
+Virginia MES Provider Downloads,"Taxonomy lists, provider files, fee schedules, forms, operational downloads; DMAS says taxonomy lists are available through the MES public portal (Virginia Medicaid)"
+DMAS Rates and Rate Setting,"Fee schedules, reimbursement rates, service authorization indicators"
+Virginia Preferred Drug List / Common Core Formulary,PBM/formulary/PA changes; Virginia MES portal posts PDL/formulary bulletins (Virginia Medicaid)
+DMAS MCO technical manuals / contracts,"File submissions, reporting, encounter, staffing, compliance, deliverables, due dates (Virginia Medicaid)"
+,
+Agent source-priority model,
+,
+Use this hierarchy:,
+,
+Tier 1 — Binding authority,
+"Federal law, CFR, Federal Register, CMS/CMCS guidance, approved SPAs, approved waivers",
+,
+Tier 2 — Operational authority,
+"DMAS manuals, DMAS memos/bulletins, MCO contracts, fee schedules, provider downloads",
+,
+Tier 3 — Standards authority,
+"T-MSIS, X12, NCPDP, HL7/FHIR, CAQH CORE, NUCC, NPPES, HCPCS, ICD",
+,
+Tier 4 — Interpretive/reference,
+"MACPAC, ResDAC, KFF, vendor manuals, health plan manuals",
+,
+Skill design recommendation,
+,
+Your skill should maintain a table like this:,
+,
+source_name,
+source_url,
+authority_level,
+jurisdiction: federal / Virginia,
+domain: provider / member / claims / plan / PBM / waiver / eligibility / finance,
+artifact_type: manual / bulletin / value-list / regulation / standard / file layout,
+crawl_frequency,
+last_checked,
+last_changed,
+change_summary,
+impacted_specs,
+,
+Then every detected change should produce:,
+,
+Change detected,
+?,
+Classify impacted domain,
+?,
+Extract rule/value-list/schema change,
+?,
+Compare against existing integration specs,
+?,
+Generate spec update proposal,
+?,
+Route to BA/SME approval,
+,
+"For your FAS/MMIS replacement, the most important starting sources are: T-MSIS Data Guide, CMS/CMCS policy guidance, CMS NCCI Medicaid, Virginia DMAS Memos/Bulletins, Virginia Provider Manuals, Virginia SPAs/Waivers, Virginia Cardinal Care contracts, and Virginia provider downloads/fee schedules.",

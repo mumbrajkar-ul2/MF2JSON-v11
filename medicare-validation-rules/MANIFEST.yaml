@@ -1,0 +1,65 @@
+# Provenance manifest for the Medicare Validation Rules library.
+# Each rule set pins the exact source dictionary it was built from, so generated
+# Integration Specifications can be traced to a specific rule release.
+
+library:
+  name: medicare-validation-rules
+  description: >-
+    Shared, version-controlled, text-first library of Medicare / Medicaid (T-MSIS)
+    data-element definitions and validation rules for Cursor-assisted Integration
+    Specification generation.
+  owner: MMIS SME / Data Steward            # CODEOWNERS for rules/
+  consumers: Business Analysts (read-only)
+
+rule_sets:
+  - id: eligibility
+    path: rules/eligibility/
+    domain: Member Eligibility
+    source:
+      system: T-MSIS (Transformed Medicaid Statistical Information System)
+      artifact: Eligibility data dictionary
+      dictionary_version: "4.0.33"
+      retrieved: "2026-05-22"
+      original_filename: data_elements_4.0.33_2026-05-22T15_51_32.xlsx
+      record_of_truth: rules/eligibility/source.xlsx
+    generated_text:
+      - rules/eligibility/data-elements.csv
+      - rules/eligibility/data-elements.md
+    segments:
+      - ELG00001 FILE-HEADER-RECORD-ELIGIBILITY
+      - ELG00002 PRIMARY-DEMOGRAPHICS-ELIGIBILITY
+      - ELG00003 VARIABLE-DEMOGRAPHICS-ELIGIBILITY
+      - ELG00004 ELIGIBLE-CONTACT-INFORMATION
+      - ELG00005 ELIGIBILITY-DETERMINANTS
+      - ELG00006 HEALTH-HOME-SPA-PARTICIPATION-INFORMATION
+      - ELG00007 HEALTH-HOME-SPA-PROVIDERS
+      - ELG00008 HEALTH-HOME-CHRONIC-CONDITIONS
+      - ELG00010 MFP-INFORMATION
+      - ELG00012 WAIVER-PARTICIPATION
+    value_lists_status: CONFIRMED   # populated from CMS tmsis-data-dictionary-valid-value-list.xlsx
+
+conventions:
+  rule_tag: Medicaid_Rule           # how applied rules are highlighted in generated specs
+  data_element_id_format: ELG.xxx.xxx
+  research_prompt: prompts/integration-spec-research.md
+  writer_prompt: prompts/integration-spec-write.md
+  research_schema: schemas/integration-research.schema.json
+  spec_generation_prompt: prompts/integration-spec-generation.md  # deprecated redirect
+  research_rule: .cursor/rules/integration-spec-research.mdc
+  writer_rule: .cursor/rules/integration-spec-writer.mdc
+  always_on_rule: .cursor/rules/medicaid-spec-conventions.mdc
+
+validators:
+  research: tools/validate_research.py
+  spec_against_research: tools/validate_spec_against_research.py
+
+converter:
+  tool: tools/xlsx_to_text.py
+  command: "python tools/xlsx_to_text.py rules/eligibility/source.xlsx"
+  dependency: openpyxl
+
+spec_export:
+  tool: tools/md_to_docx.py
+  command: "python tools/md_to_docx.py <path-to-integration-spec.md>"
+  dependency: pandoc
+  note: Agent runs after every spec generation; Markdown is canonical, .docx is the stakeholder deliverable

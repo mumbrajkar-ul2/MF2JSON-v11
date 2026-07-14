@@ -1,0 +1,75 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+01,Parents and Other Caretaker Relatives,ELG.005.087,Eligibility Group List,CONFIRMED
+02,Transitional Medical Assistance,ELG.005.087,Eligibility Group List,CONFIRMED
+03,Extended Medicaid due to Earnings,ELG.005.087,Eligibility Group List,CONFIRMED
+04,Extended Medicaid due to Spousal Support Collections,ELG.005.087,Eligibility Group List,CONFIRMED
+05,Pregnant Women,ELG.005.087,Eligibility Group List,CONFIRMED
+06,Deemed Newborns,ELG.005.087,Eligibility Group List,CONFIRMED
+07,Infants and Children under Age 19,ELG.005.087,Eligibility Group List,CONFIRMED
+08,"Children with Title IV-E Adoption Assistance, Foster Care or Guardianship Care",ELG.005.087,Eligibility Group List,CONFIRMED
+09,Former Foster Care Children,ELG.005.087,Eligibility Group List,CONFIRMED
+10,"Individuals at or below 133% FPL Age 19 through 64 / Non-pregnant individuals aged 19 through 64, not otherwise mandatorily eligible, with income at or below 133% FPL",ELG.005.087,Eligibility Group List,CONFIRMED
+11,Individuals Receiving SSI,ELG.005.087,Eligibility Group List,CONFIRMED
+12,"Aged, Blind and Disabled Individuals in 209(b) States",ELG.005.087,Eligibility Group List,CONFIRMED
+13,Individuals Receiving Mandatory State Supplements,ELG.005.087,Eligibility Group List,CONFIRMED
+14,Individuals Who Are Essential Spouses,ELG.005.087,Eligibility Group List,CONFIRMED
+15,Institutionalized Individuals Continuously Eligible Since 1973,ELG.005.087,Eligibility Group List,CONFIRMED
+16,Blind or Disabled Individuals Eligible in 1973,ELG.005.087,Eligibility Group List,CONFIRMED
+17,Individuals Who Lost Eligibility for SSI/SSP Due to an Increase in OASDI Benefits in 1972,ELG.005.087,Eligibility Group List,CONFIRMED
+18,"Individuals Who Would be Eligible for SSI/SSP but for OASDI COLA increases since April, 1977",ELG.005.087,Eligibility Group List,CONFIRMED
+19,Disabled Widows and Widowers Ineligible for SSI due to Increase in OASDI,ELG.005.087,Eligibility Group List,CONFIRMED
+20,Disabled Widows and Widowers Ineligible for SSI due to Early Receipt of Social Security,ELG.005.087,Eligibility Group List,CONFIRMED
+21,Working Disabled under 1619(b),ELG.005.087,Eligibility Group List,CONFIRMED
+22,Disabled Adult Children,ELG.005.087,Eligibility Group List,CONFIRMED
+23,Qualified Medicare Beneficiaries,ELG.005.087,Eligibility Group List,CONFIRMED
+24,Qualified Disabled and Working Individuals,ELG.005.087,Eligibility Group List,CONFIRMED
+25,Specified Low Income Medicare Beneficiaries,ELG.005.087,Eligibility Group List,CONFIRMED
+26,Qualifying Individuals,ELG.005.087,Eligibility Group List,CONFIRMED
+27,Optional Coverage of Parents and Other Caretaker Relatives,ELG.005.087,Eligibility Group List,CONFIRMED
+28,Reasonable Classifications of Individuals under Age 21,ELG.005.087,Eligibility Group List,CONFIRMED
+29,Children with Non-IV-E Adoption Assistance,ELG.005.087,Eligibility Group List,CONFIRMED
+30,Independent Foster Care Adolescents,ELG.005.087,Eligibility Group List,CONFIRMED
+31,Optional Targeted Low Income Children,ELG.005.087,Eligibility Group List,CONFIRMED
+32,Individuals Electing COBRA Continuation Coverage,ELG.005.087,Eligibility Group List,CONFIRMED
+33,Individuals above 133% FPL under Age 65,ELG.005.087,Eligibility Group List,CONFIRMED
+34,Certain Individuals  Needing Treatment for Breast or Cervical Cancer,ELG.005.087,Eligibility Group List,CONFIRMED
+35,Individuals Eligible for Family Planning Services,ELG.005.087,Eligibility Group List,CONFIRMED
+36,Individuals with Tuberculosis,ELG.005.087,Eligibility Group List,CONFIRMED
+37,"Aged, Blind or Disabled Individuals Eligible for but Not Receiving Cash Assistance",ELG.005.087,Eligibility Group List,CONFIRMED
+38,Individuals Eligible for Cash Assistance except for Institutionalization,ELG.005.087,Eligibility Group List,CONFIRMED
+39,Individuals Receiving Home and Community Based Services under Institutional Rules,ELG.005.087,Eligibility Group List,CONFIRMED
+40,"Optional State Supplement Recipients - 1634 States, and SSI Criteria States with 1616 Agreements",ELG.005.087,Eligibility Group List,CONFIRMED
+41,"Optional State Supplement Recipients - 209(b) States, and SSI Criteria States without 1616 Agreements",ELG.005.087,Eligibility Group List,CONFIRMED
+42,Institutionalized Individuals Eligible under a Special Income Level,ELG.005.087,Eligibility Group List,CONFIRMED
+43,Individuals participating in a PACE Program under Institutional Rules,ELG.005.087,Eligibility Group List,CONFIRMED
+44,Individuals Receiving Hospice Care,ELG.005.087,Eligibility Group List,CONFIRMED
+45,Qualified Disabled Children under Age 19,ELG.005.087,Eligibility Group List,CONFIRMED
+46,Poverty Level Aged or Disabled,ELG.005.087,Eligibility Group List,CONFIRMED
+47,Work Incentives Eligibility Group,ELG.005.087,Eligibility Group List,CONFIRMED
+48,Ticket to Work Basic Group,ELG.005.087,Eligibility Group List,CONFIRMED
+49,Ticket to Work Medical Improvements Group,ELG.005.087,Eligibility Group List,CONFIRMED
+50,Family Opportunity Act Children with Disabilities,ELG.005.087,Eligibility Group List,CONFIRMED
+51,Individuals Eligible for Home and Community-Based Services,ELG.005.087,Eligibility Group List,CONFIRMED
+52,Individuals Eligible for Home and Community-Based Services - Special Income Level,ELG.005.087,Eligibility Group List,CONFIRMED
+53,Medically Needy Pregnant Women,ELG.005.087,Eligibility Group List,CONFIRMED
+54,Medically Needy Children under Age 18,ELG.005.087,Eligibility Group List,CONFIRMED
+55,Medically Needy Children Age 18 through 20,ELG.005.087,Eligibility Group List,CONFIRMED
+56,Medically Needy Parents and Other Caretakers,ELG.005.087,Eligibility Group List,CONFIRMED
+59,"Medically Needy Aged, Blind or Disabled",ELG.005.087,Eligibility Group List,CONFIRMED
+60,Medically Needy Blind or Disabled Individuals Eligible in 1973,ELG.005.087,Eligibility Group List,CONFIRMED
+61,Targeted Low-Income Children,ELG.005.087,Eligibility Group List,CONFIRMED
+62,Deemed Newborn,ELG.005.087,Eligibility Group List,CONFIRMED
+63,Children Ineligible for Medicaid Due to Loss of Income Disregards,ELG.005.087,Eligibility Group List,CONFIRMED
+64,Coverage from Conception to Birth,ELG.005.087,Eligibility Group List,CONFIRMED
+65,Children with Access to Public Employee Coverage,ELG.005.087,Eligibility Group List,CONFIRMED
+66,Children Eligible for Dental Only Supplemental Coverage,ELG.005.087,Eligibility Group List,CONFIRMED
+67,Targeted Low-Income Pregnant Women,ELG.005.087,Eligibility Group List,CONFIRMED
+68,Pregnant Women with Access to Public Employee Coverage,ELG.005.087,Eligibility Group List,CONFIRMED
+69,Individuals with Mental Health Conditions (expansion group),ELG.005.087,Eligibility Group List,CONFIRMED
+70,Family Planning Participants (expansion group),ELG.005.087,Eligibility Group List,CONFIRMED
+71,Other expansion group,ELG.005.087,Eligibility Group List,CONFIRMED
+72,Adult Group - Individuals at or below 133% FPL Age 19 through 64 - newly eligible for all states,ELG.005.087,Eligibility Group List,CONFIRMED
+73,Adult Group - Individuals at or below 133% FPL Age 19 through 64 - not newly eligible for non 1905z(3) states,ELG.005.087,Eligibility Group List,CONFIRMED
+74,Adult Group - Individuals at or below 133% FPL Age 19 through 64 - not newly eligible parent/ caretaker-relative(s) in 1905z(3) states,ELG.005.087,Eligibility Group List,CONFIRMED
+75,Adult Group - Individuals at or below 133% FPL Age 19 through 64 - not newly eligible non-parent/ caretaker-relative(s) in 1905z(3) states,ELG.005.087,Eligibility Group List,CONFIRMED
+76,Uninsured Individual eligible for COVID-19 testing,ELG.005.087,Eligibility Group List,CONFIRMED

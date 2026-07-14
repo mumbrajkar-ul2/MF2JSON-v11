@@ -1,0 +1,49 @@
+meta:
+  flow: Member Eligibility
+  dictionary_version: "4.0.33"
+  sources:
+    - path: source/MEMBERELIGIBILITY.csv
+      sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+    - path: target/MemberEligibilityVO.md
+      sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+
+field_mappings:
+  - source_field: CTR-INTF-DT
+    source_ref: "MEMBERELIGIBILITY.csv:L2"
+    target_attribute: interfaceDate
+    target_ref: "MemberEligibilityVO.md:L10"
+    derivation: DIRECT
+    java_type: LocalDate
+    t_msis_rule: null
+    vvl_file: null
+  - source_field: MBR-GNDR-CD
+    source_ref: "MEMBERELIGIBILITY.csv:L30"
+    target_attribute: gender
+    target_ref: "MemberEligibilityVO.md:L126"
+    derivation: DIRECT
+    java_type: String
+    t_msis_rule: ELG.002.023
+    vvl_file: sex.csv
+
+gaps:
+  - id: GAP-01
+    topic: Source character encoding
+    evidence: "Not stated in MEMBERELIGIBILITY.csv, .CPY, or VO"
+    owner: MMIS SME
+    priority: P1
+
+assumptions: []
+
+vvl_members:
+  - de: ELG.002.023
+    file: sex.csv
+    rows:
+      - code: F
+        description: Female
+        source_ref: "sex.csv:L2"
+      - code: M
+        description: Male
+        source_ref: "sex.csv:L3"
+      - code: U
+        description: Unknown
+        source_ref: "sex.csv:L4"

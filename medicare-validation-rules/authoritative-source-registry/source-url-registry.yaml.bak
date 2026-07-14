@@ -1,0 +1,393 @@
+# Canonical URLs and domain allowlists for Medicare-Authoritative-Source-Registry.csv
+# Agent MUST NOT fetch from domains not listed here.
+# Update this file when the CSV registry changes.
+
+registry_csv: Medicare-Authoritative-Source-Registry.csv
+version: "1.0.0"
+
+authority_tiers:
+  tier_1:
+    label: Binding authority
+    description: Federal law, CFR, Federal Register, CMS/CMCS guidance, approved SPAs, approved waivers
+  tier_2:
+    label: Operational authority
+    description: DMAS manuals, memos/bulletins, MCO contracts, fee schedules, provider downloads
+  tier_3:
+    label: Standards authority
+    description: T-MSIS, X12, NCPDP, HL7/FHIR, CAQH CORE, NUCC, NPPES, HCPCS, ICD
+  tier_4:
+    label: Interpretive/reference
+    description: ResDAC, MACPAC — secondary; cite as interpretive, not primary
+
+sources:
+  # --- Federal ---
+  - id: federal-medicaid-gov
+    name: Medicaid.gov
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.medicaid.gov, medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/
+    use_for: [policy, eligibility, benefits, managed_care, program_integrity, waivers]
+    crawlable: true
+
+  - id: federal-cms-cmcs-guidance
+    name: CMS / CMCS Federal Policy Guidance
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/regulations/guidance-for-states/index.html
+    use_for: [policy, guidance, director_letters, bulletins]
+    crawlable: true
+
+  - id: federal-t-msis
+    name: T-MSIS Data Guide
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.medicaid.gov, download.medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/data-and-systems/macbis/t-msis/tmsis-dictionary/index.html
+      - https://www.medicaid.gov/medicaid/data-and-systems/macbis/t-msis/tmsis-data-guide/index.html
+    use_for: [member, provider, claims, managed_care, tpl, eligibility, file_layout, data_dictionary, rules, value_lists]
+    crawlable: true
+    priority_for: [entity_lookup, lov_lookup, rule_lookup, standard_updates]
+
+  - id: federal-data-medicaid-gov
+    name: Data.Medicaid.gov
+    jurisdiction: federal
+    tier: tier_3
+    domains: [data.medicaid.gov]
+    entry_urls:
+      - https://data.medicaid.gov/
+    use_for: [datasets, reference_data, api_data]
+    crawlable: true
+
+  - id: federal-mes-certification
+    name: CMS Medicaid Enterprise Certification / OBC / SMC guidance
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/data-and-systems/mes-certification/index.html
+    use_for: [mes, certification, mita, enhanced_funding]
+    crawlable: true
+
+  - id: federal-spa-repository
+    name: Medicaid State Plan Amendments repository
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/spa/index.html
+    use_for: [state_plan, spa, coverage, reimbursement, eligibility, benefits]
+    crawlable: true
+
+  - id: federal-waiver-resources
+    name: CMS 1915 / 1115 waiver resources
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/spa/waivers/index.html
+    use_for: [waiver, hcbs, managed_care_authority, demonstration]
+    crawlable: true
+
+  - id: federal-ncci-medicaid
+    name: CMS NCCI Medicaid
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.medicaid.gov, www.cms.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/ncci-medicaid/index.html
+    use_for: [claims, edits, ptp, mue]
+    crawlable: true
+    notes: Production adjudication uses secure RISSNET files; public site is reference only.
+
+  - id: federal-mdrp
+    name: CMS Medicaid Drug Rebate Program
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.medicaid.gov]
+    entry_urls:
+      - https://www.medicaid.gov/medicaid/prescription-drugs/medicaid-drug-rebate-program/index.html
+    use_for: [pharmacy, pbm, drug_rebate, amp, ful, drug_policy]
+    crawlable: true
+
+  - id: federal-ecfr-fr
+    name: eCFR / Federal Register
+    jurisdiction: federal
+    tier: tier_1
+    domains: [www.ecfr.gov, www.federalregister.gov]
+    entry_urls:
+      - https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-C
+      - https://www.federalregister.gov/
+    use_for: [regulation, rule_changes, cfr]
+    crawlable: true
+
+  - id: federal-x12-wpc
+    name: X12 / Washington Publishing Company
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.wpc-edi.com]
+    entry_urls:
+      - https://www.wpc-edi.com/
+    use_for: [edi, x12, "837", "835", "834", "270", "271", "276", "277", "278"]
+    crawlable: limited
+    notes: Licensed; not fully crawlable. Document GAP if content requires license.
+
+  - id: federal-caqh-core
+    name: CAQH CORE
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.caqh.org]
+    entry_urls:
+      - https://www.caqh.org/core
+    use_for: [eligibility, claim_status, eft, era, prior_authorization, operating_rules]
+    crawlable: true
+
+  - id: federal-ncpdp
+    name: NCPDP
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.ncpdp.org]
+    entry_urls:
+      - https://www.ncpdp.org/
+    use_for: [pharmacy, script, ncpdp_d0, claim_payment]
+    crawlable: limited
+
+  - id: federal-hl7-fhir
+    name: HL7 / FHIR / Da Vinci
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.hl7.org, confluence.hl7.org, build.fhir.org, hl7.org]
+    entry_urls:
+      - https://www.hl7.org/fhir/
+      - https://confluence.hl7.org/display/DVR/Da+Vinci+Implementation+Guides
+    use_for: [member, provider, coverage, prior_authorization, clinical, api_standards]
+    crawlable: true
+
+  - id: federal-nucc
+    name: NUCC Taxonomy Code Set
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.nucc.org]
+    entry_urls:
+      - https://www.nucc.org/index.php/Code-Set-Resources
+    use_for: [provider, taxonomy, value_lists]
+    crawlable: true
+
+  - id: federal-nppes
+    name: NPPES NPI Registry
+    jurisdiction: federal
+    tier: tier_3
+    domains: [npiregistry.cms.hhs.gov, download.cms.gov, www.cms.gov]
+    entry_urls:
+      - https://npiregistry.cms.hhs.gov/
+      - https://download.cms.gov/nppes/NPI_Files.html
+    use_for: [provider, npi, demographics]
+    crawlable: true
+
+  - id: federal-icd
+    name: CDC / ICD / NCHS
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.cdc.gov, ftp.cdc.gov]
+    entry_urls:
+      - https://www.cdc.gov/nchs/icd/icd-10-cm.htm
+    use_for: [diagnosis, icd10, code_updates, value_lists]
+    crawlable: true
+
+  - id: federal-hcpcs
+    name: CMS HCPCS
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.cms.gov]
+    entry_urls:
+      - https://www.cms.gov/medicare/coding-billing/hcpcsreleasecodesets
+    use_for: [procedure, supply, hcpcs, code_updates]
+    crawlable: true
+
+  - id: federal-ama-cpt
+    name: AMA CPT
+    jurisdiction: federal
+    tier: tier_3
+    domains: [www.ama-assn.org]
+    entry_urls:
+      - https://www.ama-assn.org/practice-management/cpt
+    use_for: [procedure, cpt]
+    crawlable: limited
+    notes: Licensed source; not freely crawlable. Document GAP if CPT detail required.
+
+  - id: federal-resdac-macpac
+    name: ResDAC / MACPAC
+    jurisdiction: federal
+    tier: tier_4
+    domains: [www.resdac.org, www.macpac.gov]
+    entry_urls:
+      - https://www.resdac.org/
+      - https://www.macpac.gov/
+    use_for: [interpretive, reference]
+    crawlable: true
+    notes: Secondary interpretive sources; not primary authority.
+
+  # --- Virginia ---
+  - id: va-dmas-main
+    name: Virginia DMAS main site
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [www.dmas.virginia.gov, dmas.virginia.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/
+    use_for: [policy, programs, rates, state_plan, waivers, managed_care, provider]
+    crawlable: true
+
+  - id: va-mes-portal
+    name: Virginia Medicaid MES portal
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [vamedicaid.dmas.virginia.gov]
+    entry_urls:
+      - https://vamedicaid.dmas.virginia.gov/
+      - https://vamedicaid.dmas.virginia.gov/provider
+    use_for: [mes, manuals, memos, bulletins, edi, eps, crms, prss]
+    crawlable: true
+    priority_for: [entity_lookup, standard_updates, operational_changes]
+
+  - id: va-provider-manuals
+    name: Virginia Medicaid Provider Manuals Library
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [vamedicaid.dmas.virginia.gov]
+    entry_urls:
+      - https://vamedicaid.dmas.virginia.gov/manuals/provider-manuals-library
+    use_for: [billing, coverage, claims, provider, manuals]
+    crawlable: true
+
+  - id: va-memos-bulletins
+    name: Virginia Medicaid Memos & Bulletins
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [vamedicaid.dmas.virginia.gov, www.dmas.virginia.gov]
+    entry_urls:
+      - https://vamedicaid.dmas.virginia.gov/provider/library
+      - https://vamedicaid.dmas.virginia.gov/providers/memo-2026
+    use_for: [policy, billing, provider, waiver, managed_care, change_feed]
+    crawlable: true
+    priority_for: [standard_updates, rule_lookup]
+
+  - id: va-state-plan
+    name: DMAS State Plan
+    jurisdiction: virginia
+    tier: tier_1
+    domains: [www.dmas.virginia.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/for-providers/state-plan/
+    use_for: [state_plan, coverage, eligibility, benefits]
+    crawlable: true
+
+  - id: va-spas
+    name: DMAS Approved SPAs / Filed SPAs
+    jurisdiction: virginia
+    tier: tier_1
+    domains: [www.dmas.virginia.gov, www.medicaid.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/for-providers/state-plan/state-plan-amendments/
+      - https://www.medicaid.gov/medicaid/spa/index.html
+    use_for: [spa, eligibility, benefits, reimbursement]
+    crawlable: true
+
+  - id: va-waivers
+    name: DMAS Waivers / 1115 / 1915(c) pages
+    jurisdiction: virginia
+    tier: tier_1
+    domains: [www.dmas.virginia.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/for-members/waivers/
+    use_for: [waiver, hcbs, ccc_plus, dd_waiver, demonstration]
+    crawlable: true
+
+  - id: va-cardinal-care
+    name: Cardinal Care Managed Care resources
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [www.dmas.virginia.gov, vamedicaid.dmas.virginia.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/for-members/cardinal-care/
+    use_for: [managed_care, mco, encounter, member, plan, care_management]
+    crawlable: true
+
+  - id: va-provider-downloads
+    name: Virginia MES Provider Downloads
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [vamedicaid.dmas.virginia.gov]
+    entry_urls:
+      - https://vamedicaid.dmas.virginia.gov/provider
+    use_for: [taxonomy, provider_files, fee_schedules, forms, value_lists]
+    crawlable: true
+    priority_for: [lov_lookup]
+    notes: Provider file downloads linked from the MES provider gateway.
+
+  - id: va-rates
+    name: DMAS Rates and Rate Setting
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [www.dmas.virginia.gov, vamedicaid.dmas.virginia.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/for-providers/rates-and-rate-setting/
+    use_for: [fee_schedules, reimbursement, rates, service_authorization]
+    crawlable: true
+
+  - id: va-pdl-formulary
+    name: Virginia Preferred Drug List / Common Core Formulary
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [vamedicaid.dmas.virginia.gov, www.dmas.virginia.gov]
+    entry_urls:
+      - https://vamedicaid.dmas.virginia.gov/provider/library
+      - https://vamedicaid.dmas.virginia.gov/manuals/provider-manuals-library
+    use_for: [pbm, formulary, prior_authorization, pharmacy]
+    crawlable: true
+    notes: >-
+      PDL/formulary change bulletins and Pharmacy Manual Chapter 4 are on MES.
+      Live formulary lists may link to off-registry vendor sites; do not fetch those —
+      use MES bulletins and manual PDFs only.
+
+  - id: va-mco-manuals
+    name: DMAS MCO technical manuals / contracts
+    jurisdiction: virginia
+    tier: tier_2
+    domains: [www.dmas.virginia.gov, vamedicaid.dmas.virginia.gov]
+    entry_urls:
+      - https://www.dmas.virginia.gov/for-providers/cardinal-care/
+    use_for: [mco, encounter, reporting, compliance, deliverables]
+    crawlable: true
+
+# Flat allowlist — every hostname the agent may fetch
+allowed_domains:
+  - www.medicaid.gov
+  - medicaid.gov
+  - download.medicaid.gov
+  - data.medicaid.gov
+  - www.cms.gov
+  - download.cms.gov
+  - npiregistry.cms.hhs.gov
+  - www.ecfr.gov
+  - www.federalregister.gov
+  - www.wpc-edi.com
+  - www.caqh.org
+  - www.ncpdp.org
+  - www.hl7.org
+  - hl7.org
+  - confluence.hl7.org
+  - build.fhir.org
+  - www.nucc.org
+  - www.cdc.gov
+  - ftp.cdc.gov
+  - www.ama-assn.org
+  - www.resdac.org
+  - www.macpac.gov
+  - www.dmas.virginia.gov
+  - dmas.virginia.gov
+  - vamedicaid.dmas.virginia.gov

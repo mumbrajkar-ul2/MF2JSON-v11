@@ -1,0 +1,9 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+01,1 person,ELG.003.047,Household Size List,CONFIRMED
+02,2 people,ELG.003.047,Household Size List,CONFIRMED
+03,3 people,ELG.003.047,Household Size List,CONFIRMED
+04,4 people,ELG.003.047,Household Size List,CONFIRMED
+05,5 people,ELG.003.047,Household Size List,CONFIRMED
+06,6 people,ELG.003.047,Household Size List,CONFIRMED
+07,7 people,ELG.003.047,Household Size List,CONFIRMED
+08,8 or more people,ELG.003.047,Household Size List,CONFIRMED

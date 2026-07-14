@@ -1,0 +1,11 @@
+{
+  "flowName": "Member Eligibility",
+  "researchYaml": "research/Integration_Research_MemberEligibility.yaml",
+  "specMd": "spec/Integration_Spec_MES_to_CMdS_MemberEligibility.md",
+  "sourceLayout": "source/MEMBERELIGIBILITY.csv",
+  "sourceCopybook": "source/MEMBERELIGIBILITY.CPY",
+  "targetVO": "target/MemberEligibilityVO.md",
+  "validationRules": "rules/eligibility/data-elements.md",
+  "valueLists": "rules/eligibility/value-lists/",
+  "libraryRelativePath": "../../medicare-validation-rules"
+}

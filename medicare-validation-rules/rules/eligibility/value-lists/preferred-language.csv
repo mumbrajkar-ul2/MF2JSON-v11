@@ -1,0 +1,484 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+ABK,Abkhazian,ELG.003.046,Preferred Language Code List,CONFIRMED
+KUT,Kutenai,ELG.003.046,Preferred Language Code List,CONFIRMED
+ACE,Achinese,ELG.003.046,Preferred Language Code List,CONFIRMED
+LAD,Ladino,ELG.003.046,Preferred Language Code List,CONFIRMED
+ACH,Acoli,ELG.003.046,Preferred Language Code List,CONFIRMED
+LAH,Lahnda,ELG.003.046,Preferred Language Code List,CONFIRMED
+ADA,Adangme,ELG.003.046,Preferred Language Code List,CONFIRMED
+LAM,Lamba,ELG.003.046,Preferred Language Code List,CONFIRMED
+ADY,Adyghe; Adygei,ELG.003.046,Preferred Language Code List,CONFIRMED
+DAY,Land Dayak languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+AAR,Afar,ELG.003.046,Preferred Language Code List,CONFIRMED
+LAO,Lao,ELG.003.046,Preferred Language Code List,CONFIRMED
+AFH,Afrihili,ELG.003.046,Preferred Language Code List,CONFIRMED
+LAT,Latin,ELG.003.046,Preferred Language Code List,CONFIRMED
+AFR,Afrikaans,ELG.003.046,Preferred Language Code List,CONFIRMED
+LAV,Latvian,ELG.003.046,Preferred Language Code List,CONFIRMED
+AFA,Afro-Asiatic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+LEZ,Lezghian,ELG.003.046,Preferred Language Code List,CONFIRMED
+AIN,Ainu,ELG.003.046,Preferred Language Code List,CONFIRMED
+LIM,Limburgan; Limburger; Limburgish,ELG.003.046,Preferred Language Code List,CONFIRMED
+AKA,Akan,ELG.003.046,Preferred Language Code List,CONFIRMED
+LIN,Lingala,ELG.003.046,Preferred Language Code List,CONFIRMED
+AKK,Akkadian,ELG.003.046,Preferred Language Code List,CONFIRMED
+LIT,Lithuanian,ELG.003.046,Preferred Language Code List,CONFIRMED
+ALB,Albanian,ELG.003.046,Preferred Language Code List,CONFIRMED
+JBO,Lojban,ELG.003.046,Preferred Language Code List,CONFIRMED
+NDS,"Low German; Low Saxon; German, Low; Saxon, Low",ELG.003.046,Preferred Language Code List,CONFIRMED
+ALE,Aleut,ELG.003.046,Preferred Language Code List,CONFIRMED
+DSB,Lower Sorbian,ELG.003.046,Preferred Language Code List,CONFIRMED
+ALG,Algonquian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+LOZ,Lozi,ELG.003.046,Preferred Language Code List,CONFIRMED
+TUT,Altaic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUB,Luba-Katanga,ELG.003.046,Preferred Language Code List,CONFIRMED
+AMH,Amharic,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUA,Luba-Lulua,ELG.003.046,Preferred Language Code List,CONFIRMED
+ANP,Angika,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUI,Luiseno,ELG.003.046,Preferred Language Code List,CONFIRMED
+APA,Apache languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+SMJ,Lule Sami,ELG.003.046,Preferred Language Code List,CONFIRMED
+ARA,Arabic,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUN,Lunda,ELG.003.046,Preferred Language Code List,CONFIRMED
+ARG,Aragonese,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUO,Luo (Kenya and Tanzania),ELG.003.046,Preferred Language Code List,CONFIRMED
+ARP,Arapaho,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUS,Lushai,ELG.003.046,Preferred Language Code List,CONFIRMED
+ARW,Arawak,ELG.003.046,Preferred Language Code List,CONFIRMED
+LTZ,Luxembourgish; Letzeburgesch,ELG.003.046,Preferred Language Code List,CONFIRMED
+ARM,Armenian,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAC,Macedonian,ELG.003.046,Preferred Language Code List,CONFIRMED
+RUP,Aromanian; Arumanian; Macedo-Romanian,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAD,Madurese,ELG.003.046,Preferred Language Code List,CONFIRMED
+ART,Artificial languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAG,Magahi,ELG.003.046,Preferred Language Code List,CONFIRMED
+ASM,Assamese,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAI,Maithili,ELG.003.046,Preferred Language Code List,CONFIRMED
+AST,Asturian; Bable; Leonese; Asturleonese,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAK,Makasar,ELG.003.046,Preferred Language Code List,CONFIRMED
+ATH,Athapascan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MLG,Malagasy,ELG.003.046,Preferred Language Code List,CONFIRMED
+AUS,Australian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAY,Malay,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAP,Austronesian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAL,Malayalam,ELG.003.046,Preferred Language Code List,CONFIRMED
+AVA,Avaric,ELG.003.046,Preferred Language Code List,CONFIRMED
+MLT,Maltese,ELG.003.046,Preferred Language Code List,CONFIRMED
+AVE,Avestan,ELG.003.046,Preferred Language Code List,CONFIRMED
+MNC,Manchu,ELG.003.046,Preferred Language Code List,CONFIRMED
+AWA,Awadhi,ELG.003.046,Preferred Language Code List,CONFIRMED
+MDR,Mandar,ELG.003.046,Preferred Language Code List,CONFIRMED
+AYM,Aymara,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAN,Mandingo,ELG.003.046,Preferred Language Code List,CONFIRMED
+AZE,Azerbaijani,ELG.003.046,Preferred Language Code List,CONFIRMED
+MNI,Manipuri,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAN,Balinese,ELG.003.046,Preferred Language Code List,CONFIRMED
+MNO,Manobo languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAT,Baltic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+GLV,Manx,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAL,Baluchi,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAO,Maori,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAM,Bambara,ELG.003.046,Preferred Language Code List,CONFIRMED
+ARN,Mapudungun; Mapuche,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAI,Bamileke languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAR,Marathi,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAD,Banda languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHM,Mari,ELG.003.046,Preferred Language Code List,CONFIRMED
+BNT,Bantu languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAH,Marshallese,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAS,Basa,ELG.003.046,Preferred Language Code List,CONFIRMED
+MWR,Marwari,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAK,Bashkir,ELG.003.046,Preferred Language Code List,CONFIRMED
+MAS,Masai,ELG.003.046,Preferred Language Code List,CONFIRMED
+BAQ,Basque,ELG.003.046,Preferred Language Code List,CONFIRMED
+MYN,Mayan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+BTK,Batak languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MEN,Mende,ELG.003.046,Preferred Language Code List,CONFIRMED
+BEJ,Beja; Bedawiyet,ELG.003.046,Preferred Language Code List,CONFIRMED
+MIC,Mi'kmaq; Micmac,ELG.003.046,Preferred Language Code List,CONFIRMED
+BEL,Belarusian,ELG.003.046,Preferred Language Code List,CONFIRMED
+MIN,Minangkabau,ELG.003.046,Preferred Language Code List,CONFIRMED
+BEM,Bemba,ELG.003.046,Preferred Language Code List,CONFIRMED
+MWL,Mirandese,ELG.003.046,Preferred Language Code List,CONFIRMED
+BEN,Bengali,ELG.003.046,Preferred Language Code List,CONFIRMED
+MOH,Mohawk,ELG.003.046,Preferred Language Code List,CONFIRMED
+BER,Berber languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MDF,Moksha,ELG.003.046,Preferred Language Code List,CONFIRMED
+BHO,Bhojpuri,ELG.003.046,Preferred Language Code List,CONFIRMED
+LOL,Mongo,ELG.003.046,Preferred Language Code List,CONFIRMED
+BIH,Bihari languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MON,Mongolian,ELG.003.046,Preferred Language Code List,CONFIRMED
+BIK,Bikol,ELG.003.046,Preferred Language Code List,CONFIRMED
+MKH,Mon-Khmer languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+BIN,Bini; Edo,ELG.003.046,Preferred Language Code List,CONFIRMED
+MOS,Mossi,ELG.003.046,Preferred Language Code List,CONFIRMED
+BIS,Bislama,ELG.003.046,Preferred Language Code List,CONFIRMED
+MUL,Multiple languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+BYN,Blin; Bilin,ELG.003.046,Preferred Language Code List,CONFIRMED
+MUN,Munda languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZBL,Blissymbols; Blissymbolics; Bliss,ELG.003.046,Preferred Language Code List,CONFIRMED
+NAH,Nahuatl languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+NOB,"Bokmål, Norwegian; Norwegian Bokmål",ELG.003.046,Preferred Language Code List,CONFIRMED
+NAU,Nauru,ELG.003.046,Preferred Language Code List,CONFIRMED
+BOS,Bosnian,ELG.003.046,Preferred Language Code List,CONFIRMED
+NAV,Navajo; Navaho,ELG.003.046,Preferred Language Code List,CONFIRMED
+BRA,Braj,ELG.003.046,Preferred Language Code List,CONFIRMED
+NDE,"Ndebele, North; North Ndebele",ELG.003.046,Preferred Language Code List,CONFIRMED
+BRE,Breton,ELG.003.046,Preferred Language Code List,CONFIRMED
+NBL,"Ndebele, South; South Ndebele",ELG.003.046,Preferred Language Code List,CONFIRMED
+BUG,Buginese,ELG.003.046,Preferred Language Code List,CONFIRMED
+NDO,Ndonga,ELG.003.046,Preferred Language Code List,CONFIRMED
+BUL,Bulgarian,ELG.003.046,Preferred Language Code List,CONFIRMED
+NAP,Neapolitan,ELG.003.046,Preferred Language Code List,CONFIRMED
+BUA,Buriat,ELG.003.046,Preferred Language Code List,CONFIRMED
+NEW,Nepal Bhasa; Newari,ELG.003.046,Preferred Language Code List,CONFIRMED
+BUR,Burmese,ELG.003.046,Preferred Language Code List,CONFIRMED
+NEP,Nepali,ELG.003.046,Preferred Language Code List,CONFIRMED
+CAD,Caddo,ELG.003.046,Preferred Language Code List,CONFIRMED
+NIA,Nias,ELG.003.046,Preferred Language Code List,CONFIRMED
+CAT,Catalan; Valencian,ELG.003.046,Preferred Language Code List,CONFIRMED
+NIC,Niger-Kordofanian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CAU,Caucasian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+SSA,Nilo-Saharan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CEB,Cebuano,ELG.003.046,Preferred Language Code List,CONFIRMED
+NIU,Niuean,ELG.003.046,Preferred Language Code List,CONFIRMED
+CEL,Celtic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+NQO,N'Ko,ELG.003.046,Preferred Language Code List,CONFIRMED
+CAI,Central American Indian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+NOG,Nogai,ELG.003.046,Preferred Language Code List,CONFIRMED
+KHM,Central Khmer,ELG.003.046,Preferred Language Code List,CONFIRMED
+NON,"Norse, Old",ELG.003.046,Preferred Language Code List,CONFIRMED
+CHG,Chagatai,ELG.003.046,Preferred Language Code List,CONFIRMED
+NAI,North American Indian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CMC,Chamic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+FRR,Northern Frisian,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHA,Chamorro,ELG.003.046,Preferred Language Code List,CONFIRMED
+SME,Northern Sami,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHE,Chechen,ELG.003.046,Preferred Language Code List,CONFIRMED
+NOR,Norwegian,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHR,Cherokee,ELG.003.046,Preferred Language Code List,CONFIRMED
+NNO,"Norwegian Nynorsk; Nynorsk, Norwegian",ELG.003.046,Preferred Language Code List,CONFIRMED
+CHY,Cheyenne,ELG.003.046,Preferred Language Code List,CONFIRMED
+NUB,Nubian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHB,Chibcha,ELG.003.046,Preferred Language Code List,CONFIRMED
+NYM,Nyamwezi,ELG.003.046,Preferred Language Code List,CONFIRMED
+NYA,Chichewa; Chewa; Nyanja,ELG.003.046,Preferred Language Code List,CONFIRMED
+NYN,Nyankole,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHI,Chinese,ELG.003.046,Preferred Language Code List,CONFIRMED
+NYO,Nyoro,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHN,Chinook jargon,ELG.003.046,Preferred Language Code List,CONFIRMED
+NZI,Nzima,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHP,Chipewyan; Dene Suline,ELG.003.046,Preferred Language Code List,CONFIRMED
+OCI,Occitan (post 1500),ELG.003.046,Preferred Language Code List,CONFIRMED
+CHO,Choctaw,ELG.003.046,Preferred Language Code List,CONFIRMED
+ARC,Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE),ELG.003.046,Preferred Language Code List,CONFIRMED
+CHU,Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic,ELG.003.046,Preferred Language Code List,CONFIRMED
+OJI,Ojibwa,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHK,Chuukese,ELG.003.046,Preferred Language Code List,CONFIRMED
+ORI,Oriya,ELG.003.046,Preferred Language Code List,CONFIRMED
+CHV,Chuvash,ELG.003.046,Preferred Language Code List,CONFIRMED
+ORM,Oromo,ELG.003.046,Preferred Language Code List,CONFIRMED
+NWC,Classical Newari; Old Newari; Classical Nepal Bhasa,ELG.003.046,Preferred Language Code List,CONFIRMED
+OSA,Osage,ELG.003.046,Preferred Language Code List,CONFIRMED
+SYC,Classical Syriac,ELG.003.046,Preferred Language Code List,CONFIRMED
+OSS,Ossetian; Ossetic,ELG.003.046,Preferred Language Code List,CONFIRMED
+COP,Coptic,ELG.003.046,Preferred Language Code List,CONFIRMED
+OTO,Otomian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+COR,Cornish,ELG.003.046,Preferred Language Code List,CONFIRMED
+PAL,Pahlavi,ELG.003.046,Preferred Language Code List,CONFIRMED
+COS,Corsican,ELG.003.046,Preferred Language Code List,CONFIRMED
+PAU,Palauan,ELG.003.046,Preferred Language Code List,CONFIRMED
+CRE,Cree,ELG.003.046,Preferred Language Code List,CONFIRMED
+PLI,Pali,ELG.003.046,Preferred Language Code List,CONFIRMED
+MUS,Creek,ELG.003.046,Preferred Language Code List,CONFIRMED
+PAM,Pampanga; Kapampangan,ELG.003.046,Preferred Language Code List,CONFIRMED
+CRP,Creoles and pidgins,ELG.003.046,Preferred Language Code List,CONFIRMED
+PAG,Pangasinan,ELG.003.046,Preferred Language Code List,CONFIRMED
+CPE,"Creoles and pidgins, English based",ELG.003.046,Preferred Language Code List,CONFIRMED
+PAN,Panjabi; Punjabi,ELG.003.046,Preferred Language Code List,CONFIRMED
+CPF,"Creoles and pidgins, French-based",ELG.003.046,Preferred Language Code List,CONFIRMED
+PAP,Papiamento,ELG.003.046,Preferred Language Code List,CONFIRMED
+CPP,"Creoles and pidgins, Portuguese-based",ELG.003.046,Preferred Language Code List,CONFIRMED
+PAA,Papuan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CRH,Crimean Tatar; Crimean Turkish,ELG.003.046,Preferred Language Code List,CONFIRMED
+NSO,Pedi; Sepedi; Northern Sotho,ELG.003.046,Preferred Language Code List,CONFIRMED
+HRV,Croatian,ELG.003.046,Preferred Language Code List,CONFIRMED
+PER,Persian,ELG.003.046,Preferred Language Code List,CONFIRMED
+CUS,Cushitic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+PEO,"Persian, Old (ca.600-400 B.C.)",ELG.003.046,Preferred Language Code List,CONFIRMED
+CZE,Czech,ELG.003.046,Preferred Language Code List,CONFIRMED
+PHI,Philippine languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+DAK,Dakota,ELG.003.046,Preferred Language Code List,CONFIRMED
+PHN,Phoenician,ELG.003.046,Preferred Language Code List,CONFIRMED
+DAN,Danish,ELG.003.046,Preferred Language Code List,CONFIRMED
+PON,Pohnpeian,ELG.003.046,Preferred Language Code List,CONFIRMED
+DAR,Dargwa,ELG.003.046,Preferred Language Code List,CONFIRMED
+POL,Polish,ELG.003.046,Preferred Language Code List,CONFIRMED
+DEL,Delaware,ELG.003.046,Preferred Language Code List,CONFIRMED
+POR,Portuguese,ELG.003.046,Preferred Language Code List,CONFIRMED
+DIN,Dinka,ELG.003.046,Preferred Language Code List,CONFIRMED
+PRA,Prakrit languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+DIV,Divehi; Dhivehi; Maldivian,ELG.003.046,Preferred Language Code List,CONFIRMED
+PRO,"Provençal, Old (to 1500);Occitan, Old (to 1500)",ELG.003.046,Preferred Language Code List,CONFIRMED
+DOI,Dogri,ELG.003.046,Preferred Language Code List,CONFIRMED
+PUS,Pushto; Pashto,ELG.003.046,Preferred Language Code List,CONFIRMED
+DGR,Dogrib,ELG.003.046,Preferred Language Code List,CONFIRMED
+QUE,Quechua,ELG.003.046,Preferred Language Code List,CONFIRMED
+DRA,Dravidian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+RAJ,Rajasthani,ELG.003.046,Preferred Language Code List,CONFIRMED
+DUA,Duala,ELG.003.046,Preferred Language Code List,CONFIRMED
+RAP,Rapanui,ELG.003.046,Preferred Language Code List,CONFIRMED
+DUM,"Dutch, Middle (ca.1050-1350)",ELG.003.046,Preferred Language Code List,CONFIRMED
+RAR,Rarotongan; Cook Islands Maori,ELG.003.046,Preferred Language Code List,CONFIRMED
+DUT,Dutch; Flemish,ELG.003.046,Preferred Language Code List,CONFIRMED
+ROA,Romance languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+DYU,Dyula,ELG.003.046,Preferred Language Code List,CONFIRMED
+RUM,Romanian; Moldavian; Moldovan,ELG.003.046,Preferred Language Code List,CONFIRMED
+DZO,Dzongkha,ELG.003.046,Preferred Language Code List,CONFIRMED
+ROH,Romansh,ELG.003.046,Preferred Language Code List,CONFIRMED
+FRS,Eastern Frisian,ELG.003.046,Preferred Language Code List,CONFIRMED
+ROM,Romany,ELG.003.046,Preferred Language Code List,CONFIRMED
+EFI,Efik,ELG.003.046,Preferred Language Code List,CONFIRMED
+RUN,Rundi,ELG.003.046,Preferred Language Code List,CONFIRMED
+EGY,Egyptian (Ancient),ELG.003.046,Preferred Language Code List,CONFIRMED
+RUS,Russian,ELG.003.046,Preferred Language Code List,CONFIRMED
+EKA,Ekajuk,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAL,Salishan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+ELX,Elamite,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAM,Samaritan Aramaic,ELG.003.046,Preferred Language Code List,CONFIRMED
+ENG,English,ELG.003.046,Preferred Language Code List,CONFIRMED
+SMI,Sami languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+ENM,"English, Middle (1100-1500)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SMO,Samoan,ELG.003.046,Preferred Language Code List,CONFIRMED
+ANG,"English, Old (ca.450-1100)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SAD,Sandawe,ELG.003.046,Preferred Language Code List,CONFIRMED
+MYV,Erzya,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAG,Sango,ELG.003.046,Preferred Language Code List,CONFIRMED
+EPO,Esperanto,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAN,Sanskrit,ELG.003.046,Preferred Language Code List,CONFIRMED
+EST,Estonian,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAT,Santali,ELG.003.046,Preferred Language Code List,CONFIRMED
+EWE,Ewe,ELG.003.046,Preferred Language Code List,CONFIRMED
+SRD,Sardinian,ELG.003.046,Preferred Language Code List,CONFIRMED
+EWO,Ewondo,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAS,Sasak,ELG.003.046,Preferred Language Code List,CONFIRMED
+FAN,Fang,ELG.003.046,Preferred Language Code List,CONFIRMED
+SCO,Scots,ELG.003.046,Preferred Language Code List,CONFIRMED
+FAT,Fanti,ELG.003.046,Preferred Language Code List,CONFIRMED
+SEL,Selkup,ELG.003.046,Preferred Language Code List,CONFIRMED
+FAO,Faroese,ELG.003.046,Preferred Language Code List,CONFIRMED
+SEM,Semitic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+FIJ,Fijian,ELG.003.046,Preferred Language Code List,CONFIRMED
+SRP,Serbian,ELG.003.046,Preferred Language Code List,CONFIRMED
+FIL,Filipino; Pilipino,ELG.003.046,Preferred Language Code List,CONFIRMED
+SRR,Serer,ELG.003.046,Preferred Language Code List,CONFIRMED
+FIN,Finnish,ELG.003.046,Preferred Language Code List,CONFIRMED
+SHN,Shan,ELG.003.046,Preferred Language Code List,CONFIRMED
+FIU,Finno-Ugrian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+SNA,Shona,ELG.003.046,Preferred Language Code List,CONFIRMED
+FON,Fon,ELG.003.046,Preferred Language Code List,CONFIRMED
+III,Sichuan Yi; Nuosu,ELG.003.046,Preferred Language Code List,CONFIRMED
+FRE,French,ELG.003.046,Preferred Language Code List,CONFIRMED
+SCN,Sicilian,ELG.003.046,Preferred Language Code List,CONFIRMED
+FRM,"French, Middle (ca.1400-1600)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SID,Sidamo,ELG.003.046,Preferred Language Code List,CONFIRMED
+FRO,"French, Old (842-ca.1400)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SGN,Sign Languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+FUR,Friulian,ELG.003.046,Preferred Language Code List,CONFIRMED
+BLA,Siksika,ELG.003.046,Preferred Language Code List,CONFIRMED
+FUL,Fulah,ELG.003.046,Preferred Language Code List,CONFIRMED
+SND,Sindhi,ELG.003.046,Preferred Language Code List,CONFIRMED
+GAA,Ga,ELG.003.046,Preferred Language Code List,CONFIRMED
+SIN,Sinhala; Sinhalese,ELG.003.046,Preferred Language Code List,CONFIRMED
+GLA,Gaelic; Scottish Gaelic,ELG.003.046,Preferred Language Code List,CONFIRMED
+SIT,Sino-Tibetan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+CAR,Galibi Carib,ELG.003.046,Preferred Language Code List,CONFIRMED
+SIO,Siouan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+GLG,Galician,ELG.003.046,Preferred Language Code List,CONFIRMED
+SMS,Skolt Sami,ELG.003.046,Preferred Language Code List,CONFIRMED
+LUG,Ganda,ELG.003.046,Preferred Language Code List,CONFIRMED
+DEN,Slave (Athapascan),ELG.003.046,Preferred Language Code List,CONFIRMED
+GAY,Gayo,ELG.003.046,Preferred Language Code List,CONFIRMED
+SLA,Slavic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+GBA,Gbaya,ELG.003.046,Preferred Language Code List,CONFIRMED
+SLO,Slovak,ELG.003.046,Preferred Language Code List,CONFIRMED
+GEZ,Geez,ELG.003.046,Preferred Language Code List,CONFIRMED
+SLV,Slovenian,ELG.003.046,Preferred Language Code List,CONFIRMED
+GEO,Georgian,ELG.003.046,Preferred Language Code List,CONFIRMED
+SOG,Sogdian,ELG.003.046,Preferred Language Code List,CONFIRMED
+GER,German,ELG.003.046,Preferred Language Code List,CONFIRMED
+SOM,Somali,ELG.003.046,Preferred Language Code List,CONFIRMED
+GMH,"German, Middle High (ca.1050-1500)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SON,Songhai languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+GOH,"German, Old High (ca.750-1050)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SNK,Soninke,ELG.003.046,Preferred Language Code List,CONFIRMED
+GEM,Germanic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+WEN,Sorbian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+GIL,Gilbertese,ELG.003.046,Preferred Language Code List,CONFIRMED
+SOT,"Sotho, Southern",ELG.003.046,Preferred Language Code List,CONFIRMED
+GON,Gondi,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAI,South American Indian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+GOR,Gorontalo,ELG.003.046,Preferred Language Code List,CONFIRMED
+ALT,Southern Altai,ELG.003.046,Preferred Language Code List,CONFIRMED
+GOT,Gothic,ELG.003.046,Preferred Language Code List,CONFIRMED
+SMA,Southern Sami,ELG.003.046,Preferred Language Code List,CONFIRMED
+GRB,Grebo,ELG.003.046,Preferred Language Code List,CONFIRMED
+SPA,Spanish; Castilian,ELG.003.046,Preferred Language Code List,CONFIRMED
+GRC,"Greek, Ancient (to 1453)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SRN,Sranan Tongo,ELG.003.046,Preferred Language Code List,CONFIRMED
+GRE,"Greek, Modern (1453-)",ELG.003.046,Preferred Language Code List,CONFIRMED
+SUK,Sukuma,ELG.003.046,Preferred Language Code List,CONFIRMED
+GRN,Guarani,ELG.003.046,Preferred Language Code List,CONFIRMED
+SUX,Sumerian,ELG.003.046,Preferred Language Code List,CONFIRMED
+GUJ,Gujarati,ELG.003.046,Preferred Language Code List,CONFIRMED
+SUN,Sundanese,ELG.003.046,Preferred Language Code List,CONFIRMED
+GWI,Gwich'in,ELG.003.046,Preferred Language Code List,CONFIRMED
+SUS,Susu,ELG.003.046,Preferred Language Code List,CONFIRMED
+HAI,Haida,ELG.003.046,Preferred Language Code List,CONFIRMED
+SWA,Swahili,ELG.003.046,Preferred Language Code List,CONFIRMED
+HAT,Haitian; Haitian Creole,ELG.003.046,Preferred Language Code List,CONFIRMED
+SSW,Swati,ELG.003.046,Preferred Language Code List,CONFIRMED
+HAU,Hausa,ELG.003.046,Preferred Language Code List,CONFIRMED
+SWE,Swedish,ELG.003.046,Preferred Language Code List,CONFIRMED
+HAW,Hawaiian,ELG.003.046,Preferred Language Code List,CONFIRMED
+GSW,Swiss German; Alemannic; Alsatian,ELG.003.046,Preferred Language Code List,CONFIRMED
+HEB,Hebrew,ELG.003.046,Preferred Language Code List,CONFIRMED
+SYR,Syriac,ELG.003.046,Preferred Language Code List,CONFIRMED
+HER,Herero,ELG.003.046,Preferred Language Code List,CONFIRMED
+TGL,Tagalog,ELG.003.046,Preferred Language Code List,CONFIRMED
+HIL,Hiligaynon,ELG.003.046,Preferred Language Code List,CONFIRMED
+TAH,Tahitian,ELG.003.046,Preferred Language Code List,CONFIRMED
+HIM,Himachali languages; Western Pahari languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+TAI,Tai languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+HIN,Hindi,ELG.003.046,Preferred Language Code List,CONFIRMED
+TGK,Tajik,ELG.003.046,Preferred Language Code List,CONFIRMED
+HMO,Hiri Motu,ELG.003.046,Preferred Language Code List,CONFIRMED
+TMH,Tamashek,ELG.003.046,Preferred Language Code List,CONFIRMED
+HIT,Hittite,ELG.003.046,Preferred Language Code List,CONFIRMED
+TAM,Tamil,ELG.003.046,Preferred Language Code List,CONFIRMED
+HMN,Hmong; Mong,ELG.003.046,Preferred Language Code List,CONFIRMED
+TAT,Tatar,ELG.003.046,Preferred Language Code List,CONFIRMED
+HUN,Hungarian,ELG.003.046,Preferred Language Code List,CONFIRMED
+TEL,Telugu,ELG.003.046,Preferred Language Code List,CONFIRMED
+HUP,Hupa,ELG.003.046,Preferred Language Code List,CONFIRMED
+TER,Tereno,ELG.003.046,Preferred Language Code List,CONFIRMED
+IBA,Iban,ELG.003.046,Preferred Language Code List,CONFIRMED
+TET,Tetum,ELG.003.046,Preferred Language Code List,CONFIRMED
+ICE,Icelandic,ELG.003.046,Preferred Language Code List,CONFIRMED
+THA,Thai,ELG.003.046,Preferred Language Code List,CONFIRMED
+IDO,Ido,ELG.003.046,Preferred Language Code List,CONFIRMED
+TIB,Tibetan,ELG.003.046,Preferred Language Code List,CONFIRMED
+IBO,Igbo,ELG.003.046,Preferred Language Code List,CONFIRMED
+TIG,Tigre,ELG.003.046,Preferred Language Code List,CONFIRMED
+IJO,Ijo languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+TIR,Tigrinya,ELG.003.046,Preferred Language Code List,CONFIRMED
+ILO,Iloko,ELG.003.046,Preferred Language Code List,CONFIRMED
+TEM,Timne,ELG.003.046,Preferred Language Code List,CONFIRMED
+SMN,Inari Sami,ELG.003.046,Preferred Language Code List,CONFIRMED
+TIV,Tiv,ELG.003.046,Preferred Language Code List,CONFIRMED
+INC,Indic languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+TLI,Tlingit,ELG.003.046,Preferred Language Code List,CONFIRMED
+INE,Indo-European languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+TPI,Tok Pisin,ELG.003.046,Preferred Language Code List,CONFIRMED
+IND,Indonesian,ELG.003.046,Preferred Language Code List,CONFIRMED
+TKL,Tokelau,ELG.003.046,Preferred Language Code List,CONFIRMED
+INH,Ingush,ELG.003.046,Preferred Language Code List,CONFIRMED
+TOG,Tonga (Nyasa),ELG.003.046,Preferred Language Code List,CONFIRMED
+INA,Interlingua (International Auxiliary Language Association),ELG.003.046,Preferred Language Code List,CONFIRMED
+TON,Tonga (Tonga Islands),ELG.003.046,Preferred Language Code List,CONFIRMED
+ILE,Interlingue; Occidental,ELG.003.046,Preferred Language Code List,CONFIRMED
+TSI,Tsimshian,ELG.003.046,Preferred Language Code List,CONFIRMED
+IKU,Inuktitut,ELG.003.046,Preferred Language Code List,CONFIRMED
+TSO,Tsonga,ELG.003.046,Preferred Language Code List,CONFIRMED
+IPK,Inupiaq,ELG.003.046,Preferred Language Code List,CONFIRMED
+TSN,Tswana,ELG.003.046,Preferred Language Code List,CONFIRMED
+IRA,Iranian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+TUM,Tumbuka,ELG.003.046,Preferred Language Code List,CONFIRMED
+GLE,Irish,ELG.003.046,Preferred Language Code List,CONFIRMED
+TUP,Tupi languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+MGA,"Irish, Middle (900-1200)",ELG.003.046,Preferred Language Code List,CONFIRMED
+TUR,Turkish,ELG.003.046,Preferred Language Code List,CONFIRMED
+SGA,"Irish, Old (to 900)",ELG.003.046,Preferred Language Code List,CONFIRMED
+OTA,"Turkish, Ottoman (1500-1928)",ELG.003.046,Preferred Language Code List,CONFIRMED
+IRO,Iroquoian languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+TUK,Turkmen,ELG.003.046,Preferred Language Code List,CONFIRMED
+ITA,Italian,ELG.003.046,Preferred Language Code List,CONFIRMED
+TVL,Tuvalu,ELG.003.046,Preferred Language Code List,CONFIRMED
+JPN,Japanese,ELG.003.046,Preferred Language Code List,CONFIRMED
+TYV,Tuvinian,ELG.003.046,Preferred Language Code List,CONFIRMED
+JAV,Javanese,ELG.003.046,Preferred Language Code List,CONFIRMED
+TWI,Twi,ELG.003.046,Preferred Language Code List,CONFIRMED
+JRB,Judeo-Arabic,ELG.003.046,Preferred Language Code List,CONFIRMED
+UDM,Udmurt,ELG.003.046,Preferred Language Code List,CONFIRMED
+JPR,Judeo-Persian,ELG.003.046,Preferred Language Code List,CONFIRMED
+UGA,Ugaritic,ELG.003.046,Preferred Language Code List,CONFIRMED
+KBD,Kabardian,ELG.003.046,Preferred Language Code List,CONFIRMED
+UIG,Uighur; Uyghur,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAB,Kabyle,ELG.003.046,Preferred Language Code List,CONFIRMED
+UKR,Ukrainian,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAC,Kachin; Jingpho,ELG.003.046,Preferred Language Code List,CONFIRMED
+UMB,Umbundu,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAL,Kalaallisut; Greenlandic,ELG.003.046,Preferred Language Code List,CONFIRMED
+MIS,Uncoded languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+XAL,Kalmyk; Oirat,ELG.003.046,Preferred Language Code List,CONFIRMED
+UND,Undetermined,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAM,Kamba,ELG.003.046,Preferred Language Code List,CONFIRMED
+HSB,Upper Sorbian,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAN,Kannada,ELG.003.046,Preferred Language Code List,CONFIRMED
+URD,Urdu,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAU,Kanuri,ELG.003.046,Preferred Language Code List,CONFIRMED
+UZB,Uzbek,ELG.003.046,Preferred Language Code List,CONFIRMED
+KRC,Karachay-Balkar,ELG.003.046,Preferred Language Code List,CONFIRMED
+VAI,Vai,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAA,Kara-Kalpak,ELG.003.046,Preferred Language Code List,CONFIRMED
+VEN,Venda,ELG.003.046,Preferred Language Code List,CONFIRMED
+KRL,Karelian,ELG.003.046,Preferred Language Code List,CONFIRMED
+VIE,Vietnamese,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAR,Karen languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+VOL,Volapük,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAS,Kashmiri,ELG.003.046,Preferred Language Code List,CONFIRMED
+VOT,Votic,ELG.003.046,Preferred Language Code List,CONFIRMED
+CSB,Kashubian,ELG.003.046,Preferred Language Code List,CONFIRMED
+WAK,Wakashan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAW,Kawi,ELG.003.046,Preferred Language Code List,CONFIRMED
+WLN,Walloon,ELG.003.046,Preferred Language Code List,CONFIRMED
+KAZ,Kazakh,ELG.003.046,Preferred Language Code List,CONFIRMED
+WAR,Waray,ELG.003.046,Preferred Language Code List,CONFIRMED
+KHA,Khasi,ELG.003.046,Preferred Language Code List,CONFIRMED
+WAS,Washo,ELG.003.046,Preferred Language Code List,CONFIRMED
+KHI,Khoisan languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+WEL,Welsh,ELG.003.046,Preferred Language Code List,CONFIRMED
+KHO,Khotanese; Sakan,ELG.003.046,Preferred Language Code List,CONFIRMED
+FRY,Western Frisian,ELG.003.046,Preferred Language Code List,CONFIRMED
+KIK,Kikuyu; Gikuyu,ELG.003.046,Preferred Language Code List,CONFIRMED
+WAL,Wolaitta; Wolaytta,ELG.003.046,Preferred Language Code List,CONFIRMED
+KMB,Kimbundu,ELG.003.046,Preferred Language Code List,CONFIRMED
+WOL,Wolof,ELG.003.046,Preferred Language Code List,CONFIRMED
+KIN,Kinyarwanda,ELG.003.046,Preferred Language Code List,CONFIRMED
+XHO,Xhosa,ELG.003.046,Preferred Language Code List,CONFIRMED
+KIR,Kirghiz; Kyrgyz,ELG.003.046,Preferred Language Code List,CONFIRMED
+SAH,Yakut,ELG.003.046,Preferred Language Code List,CONFIRMED
+TLH,Klingon; tlhIngan-Hol,ELG.003.046,Preferred Language Code List,CONFIRMED
+YAO,Yao,ELG.003.046,Preferred Language Code List,CONFIRMED
+KOM,Komi,ELG.003.046,Preferred Language Code List,CONFIRMED
+YAP,Yapese,ELG.003.046,Preferred Language Code List,CONFIRMED
+KON,Kongo,ELG.003.046,Preferred Language Code List,CONFIRMED
+YID,Yiddish,ELG.003.046,Preferred Language Code List,CONFIRMED
+KOK,Konkani,ELG.003.046,Preferred Language Code List,CONFIRMED
+YOR,Yoruba,ELG.003.046,Preferred Language Code List,CONFIRMED
+KOR,Korean,ELG.003.046,Preferred Language Code List,CONFIRMED
+YPK,Yupik languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+KOS,Kosraean,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZND,Zande languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+KPE,Kpelle,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZAP,Zapotec,ELG.003.046,Preferred Language Code List,CONFIRMED
+KRO,Kru languages,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZZA,Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki,ELG.003.046,Preferred Language Code List,CONFIRMED
+KUA,Kuanyama; Kwanyama,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZEN,Zenaga,ELG.003.046,Preferred Language Code List,CONFIRMED
+KUM,Kumyk,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZHA,Zhuang; Chuang,ELG.003.046,Preferred Language Code List,CONFIRMED
+KUR,Kurdish,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZUL,Zulu,ELG.003.046,Preferred Language Code List,CONFIRMED
+KRU,Kurukh,ELG.003.046,Preferred Language Code List,CONFIRMED
+ZUN,Zuni,ELG.003.046,Preferred Language Code List,CONFIRMED

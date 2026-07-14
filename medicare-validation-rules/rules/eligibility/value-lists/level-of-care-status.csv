@@ -1,0 +1,7 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+001,Hospital as defined in 42 CFR 440.10,ELG.005.088,Level of Care Status List,CONFIRMED
+002,Inpatient psychiatric facility for individuals under age 21 as provided in 42 CFR  440.160,ELG.005.088,Level of Care Status List,CONFIRMED
+003,Nursing Facility,ELG.005.088,Level of Care Status List,CONFIRMED
+004,ICF/IDD,ELG.005.088,Level of Care Status List,CONFIRMED
+005,Other Type of Facility,ELG.005.088,Level of Care Status List,CONFIRMED
+888,Not Applicable (Not in LTSS program),ELG.005.088,Level of Care Status List,CONFIRMED

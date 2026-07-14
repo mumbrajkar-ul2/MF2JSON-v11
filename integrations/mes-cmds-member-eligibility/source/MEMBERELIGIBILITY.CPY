@@ -1,0 +1,119 @@
+      *****************************************************************
+      * SYSTEM: INTEGRATION TEST SOURCE - MEMBER REGISTRATION DATA
+      * FILE:   MEMBERDATA.CPY
+      * NOTE:   SIMULATED GENERIC MAINFRAME FIELD ALIGNMENT (80-BYTE)
+      *****************************************************************
+       01  MEMBER-DATA-RECORD.
+           05  CTR-INTF-DT                 PIC X(08).
+           05  CTR-SRVC-DT                 PIC X(08).
+           05  CTR-PROV-ID                 PIC X(12).
+           05  CTR-PLAN-NM                 PIC X(30).
+           05  CTR-MED-CRD-ID              PIC X(12).
+           05  CTR-MCILD-NUM               PIC X(12).
+           05  CTR-SSN-TXT                 PIC X(12).
+           05  CTR-MCR-ID-NUM              PIC X(12).
+           05  MBR-LAST-NM                 PIC X(30).
+           05  MBR-FRST-NM                 PIC X(30).
+           05  MBR-MID-NM                  PIC X(30).
+           05  MBR-ML-ADR-LN1              PIC X(30).
+           05  MBR-ML-ADR-LN2              PIC X(30).
+           05  MBR-ML-CITY-NM              PIC X(30).
+           05  MBR-ML-ST-CD                PIC X(02).
+           05  MBR-ML-ZIP-5                PIC X(05).
+           05  MBR-ML-ZIP-4                PIC X(04).
+           05  MBR-RS-ADR-LN1              PIC X(30).
+           05  MBR-RS-ADR-LN2              PIC X(30).
+           05  MBR-RS-CITY-NM              PIC X(30).
+           05  MBR-RS-ST-CD                PIC X(02).
+           05  MBR-RS-ZIP-5                PIC X(05).
+           05  MBR-RS-ZIP-4                PIC X(04).
+           05  MBR-PHN-NUM                 PIC X(12).
+           05  MBR-GEO-CNTY-CD             PIC X(04).
+           05  MBR-ADM-OFF-CD              PIC X(04).
+           05  MBR-DOB-DT                  PIC X(08).
+           05  MBR-DOD-DT                  PIC X(08).
+           05  MBR-GNDR-CD                 PIC X(04).
+           05  MBR-RACE-CD                 PIC X(04).
+           05  MBR-LANG-CD                 PIC X(04).
+           05  MBR-DSBL-TYP                PIC X(04).
+           05  MBR-PREG-DUE-DT             PIC X(08).
+           05  MBR-NPI-ID                  PIC X(12).
+           05  MBR-ELIG-CAT                PIC X(04).
+           05  MBR-TERM-RSN-CD             PIC X(04).
+           05  MBR-FED-MCH-CD              PIC X(04).
+           05  HH-NPI-ID                   PIC X(12).
+           05  HH-BEG-DT                   PIC X(08).
+           05  HH-END-DT                   PIC X(08).
+           05  HH-LVL-CD                   PIC X(04).
+           05  LTC-BEG-DT                  PIC X(08).
+           05  LTC-END-DT                  PIC X(08).
+           05  LTC-LVL-CARE-CD             PIC X(04).
+           05  LTC-CURR-BEG-DT             PIC X(08).
+           05  LTC-CURR-END-DT             PIC X(08).
+           05  LTC-CURR-LIAB-AM            PIC S9(7)V99 COMP-3.
+           05  LTC-PREV-BEG-DT             PIC X(08).
+           05  LTC-PREV-END-DT             PIC X(08).
+           05  LTC-PREV-LIAB-AM            PIC S9(7)V99 COMP-3.
+           05  DSBL-BEG-DT                 PIC X(08).
+           05  DSBL-END-DT                 PIC X(08).
+           05  MCR-PTA-BEG-DT              PIC X(08).
+           05  MCR-PTA-END-DT              PIC X(08).
+           05  MCR-PTB-BEG-DT              PIC X(08).
+           05  MCR-PTB-END-DT              PIC X(08).
+           05  MCR-PTC-BEG-DT              PIC X(08).
+           05  MCR-PTC-END-DT              PIC X(08).
+           05  MCR-PTC-CNTR-ID             PIC X(12).
+           05  MCR-PBP-ORG-NM              PIC X(30).
+           05  MCR-PTC-PLAN-NM             PIC X(30).
+           05  MCR-PTD-BEG-DT              PIC X(08).
+           05  MCR-PTD-END-DT              PIC X(08).
+           05  MCR-PTD-OPT-IND             PIC X(04).
+           05  MCR-PTD-CNTR-ID             PIC X(12).
+           05  MCR-PTD-PLAN-ID             PIC X(12).
+           05  CS-MGMT-NM                  PIC X(30).
+           05  CS-ADR-LN1                  PIC X(30).
+           05  CS-ADR-LN2                  PIC X(30).
+           05  CS-CITY-NM                  PIC X(30).
+           05  CS-ST-CD                    PIC X(02).
+           05  CS-ZIP-5                    PIC X(05).
+           05  CS-ZIP-4                    PIC X(04).
+           05  CS-PHN-NUM                  PIC X(12).
+           05  REP-LAST-NM                 PIC X(30).
+           05  REP-FRST-NM                 PIC X(30).
+           05  REP-MID-NM                  PIC X(30).
+           05  REP-ADR-LN1                 PIC X(30).
+           05  REP-ADR-LN2                 PIC X(30).
+           05  REP-CITY-NM                 PIC X(30).
+           05  REP-ST-CD                   PIC X(02).
+           05  REP-ZIP-5                   PIC X(05).
+           05  REP-ZIP-4                   PIC X(04).
+           05  REP-PHN-NUM                 PIC X(12).
+           05  PY-LAST-NM                  PIC X(30).
+           05  PY-FRST-NM                  PIC X(30).
+           05  PY-MID-NM                   PIC X(30).
+           05  PY-ADR-LN1                  PIC X(30).
+           05  PY-ADR-LN2                  PIC X(30).
+           05  PY-CITY-NM                  PIC X(30).
+           05  PY-ST-CD                    PIC X(02).
+           05  PY-ZIP-5                    PIC X(05).
+           05  PY-ZIP-4                    PIC X(04).
+           05  PY-PHN-NUM                  PIC X(12).
+           05  LCK-BEG-DT                  PIC X(08).
+           05  LCK-END-DT                  PIC X(08).
+           05  LCK-ASGN-RSN                PIC X(04).
+           05  LCK-CHG-RSN                 PIC X(04).
+           05  HPLN-RT-AMT                 PIC S9(7)V99 COMP-3.
+           05  TOT-RT-AMT                  PIC S9(7)V99 COMP-3.
+           05  XFER-PLN-ID                 PIC X(12).
+           05  FCLTY-ID                    PIC X(12).
+           05  BKG-DT                      PIC X(08).
+           05  RLSE-DT                     PIC X(08).
+           05  MRTL-STAT-CD                PIC X(04).
+           05  VET-IND-CD                  PIC X(04).
+           05  EMAIL-ADR-TXT               PIC X(30).
+           05  ENG-PRFCY-CD                PIC X(04).
+           05  HH-SIZE-NUM                 PIC 9(04) COMP.
+           05  IMM-ADMS-STAT               PIC X(04).
+           05  MC-END-DT                   PIC X(08).
+           05  MC-BEG-DT                   PIC X(08).
+           05  SRC-FILE-NM                 PIC X(30).

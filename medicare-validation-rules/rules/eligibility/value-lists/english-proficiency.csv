@@ -1,0 +1,5 @@
+code,description,t_msis_data_element,valid_value_list_name,status
+0,Very Well,ELG.003.045,Primary Language English Proficiency Code List,CONFIRMED
+1,Well,ELG.003.045,Primary Language English Proficiency Code List,CONFIRMED
+2,Not well,ELG.003.045,Primary Language English Proficiency Code List,CONFIRMED
+3,No spoken proficiency,ELG.003.045,Primary Language English Proficiency Code List,CONFIRMED

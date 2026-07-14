@@ -1,0 +1,30 @@
+---
+description: Research phase — read-only cite-only YAML artifact; no spec prose or assumptions
+alwaysApply: false
+---
+
+# Integration Spec — Research Phase
+
+Invoke this rule when running `@prompts/integration-spec-research.md` (Turn 1).
+
+## Scope
+- **Read-only:** Input artifacts only (`source/`, `target/`, `rules/`). Do not modify files.
+- **Output:** Single YAML file in integration project `research/` folder only.
+- **Schema:** Conform to `schemas/integration-research.schema.json`.
+
+## Hard prohibitions
+- No Integration Specification prose (§1–§5).
+- No MapStruct interfaces, API endpoints, or Word export.
+- No `ASM-NN` entries — `assumptions: []` must remain empty.
+- No sentinel dates, encoding decisions, or enum mappings unless explicitly in artifacts.
+- Do not invent VVL codes; copy CONFIRMED CSV rows verbatim into `vvl_members`.
+
+## Required discipline
+- Every fact: `source_ref` (`file:Lnn` or CSV row reference).
+- Gaps only in `gaps[]` — register missing facts with `evidence` citing files searched.
+- `derivation: INFERRED` when mapping is positional/name-based, not explicit in artifacts.
+- Complete field coverage: one `field_mappings` row per source layout field.
+- Run `python tools/validate_research.py` before finishing.
+
+## Subagent guidance
+Prefer readonly exploration (`Task` with `readonly: true`) when scanning large artifacts.
