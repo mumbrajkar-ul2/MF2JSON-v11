@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#000000"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <text x="480" y="28" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Workflow stages (end-to-end)</text>
+
+  <!-- Row 1: main flow boxes -->
+  <rect x="20" y="50" width="100" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="70" y="77" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#000000">Business</text>
+  <text x="70" y="90" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#000000">Analyst</text>
+
+  <rect x="150" y="50" width="120" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="210" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">Cursor Chat 1</text>
+  <text x="210" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">Research</text>
+
+  <rect x="300" y="50" width="120" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="360" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">validate_</text>
+  <text x="360" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">research.py</text>
+
+  <rect x="450" y="50" width="100" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="500" y="77" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#000000">Human</text>
+  <text x="500" y="90" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#000000">Review</text>
+
+  <rect x="580" y="50" width="120" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="640" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">Cursor Chat 2</text>
+  <text x="640" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">Writer</text>
+
+  <rect x="730" y="50" width="120" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="790" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">validate_spec_</text>
+  <text x="790" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">against_research</text>
+
+  <rect x="880" y="50" width="60" height="44" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="910" y="77" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">md_to</text>
+  <text x="910" y="90" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#000000">docx</text>
+
+  <!-- Horizontal arrows -->
+  <line x1="120" y1="72" x2="148" y2="72" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="270" y1="72" x2="298" y2="72" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="420" y1="72" x2="448" y2="72" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="72" x2="578" y2="72" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="700" y1="72" x2="728" y2="72" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="850" y1="72" x2="878" y2="72" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Labels under arrows -->
+  <text x="134" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">prompt +</text>
+  <text x="134" y="127" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">artifacts</text>
+
+  <text x="344" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">write</text>
+  <text x="344" y="127" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">research/*.yaml</text>
+
+  <text x="484" y="121" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">schema checks</text>
+
+  <text x="514" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">review YAML</text>
+  <text x="514" y="127" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">mappings / gaps</text>
+
+  <text x="664" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">research YAML</text>
+  <text x="664" y="127" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">only</text>
+
+  <text x="814" y="121" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">parity checks</text>
+
+  <text x="894" y="121" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">.docx</text>
+
+  <!-- Return / feedback arrows (dashed black) -->
+  <path d="M 360 110 Q 360 160 70 160 Q 20 160 20 96" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <text x="200" y="178" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">OK or errors (fix and re-run)</text>
+
+  <path d="M 790 110 Q 790 200 910 200 L 910 96" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <text x="850" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">stakeholder deliverable</text>
+
+  <!-- Internal C1 steps -->
+  <rect x="150" y="240" width="270" height="56" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="285" y="262" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#000000">Turn 1 internal steps</text>
+  <text x="285" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">Read source, VO, rules, VVLs � write research/*.yaml</text>
+
+  <rect x="580" y="240" width="270" height="56" fill="#ffffff" stroke="#000000" stroke-width="1.5" rx="4"/>
+  <text x="715" y="262" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#000000">Turn 2 internal steps</text>
+  <text x="715" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#000000">Write spec �1�5 from research YAML only</text>
+
+  <line x1="210" y1="94" x2="285" y2="238" stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="640" y1="94" x2="715" y2="238" stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+</svg>

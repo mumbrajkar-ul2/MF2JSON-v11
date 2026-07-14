@@ -276,6 +276,62 @@ GAPS = [
         "owner": "MMIS SME",
         "priority": "P2",
     },
+    {
+        "id": "GAP-19",
+        "topic": "Disability type code list",
+        "evidence": "MBR-DSBL-TYP present in layout (MEMBERELIGIBILITY.csv:L33) mapped to diabilityType (MemberEligibilityVO.md:L139); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-20",
+        "topic": "Health home level code list",
+        "evidence": "HH-LVL-CD present in layout (MEMBERELIGIBILITY.csv:L42) mapped to healthHomeLevelCode (MemberEligibilityVO.md:L178); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-21",
+        "topic": "Part D opt-out indicator legal values",
+        "evidence": "MCR-PTD-OPT-IND present in layout (MEMBERELIGIBILITY.csv:L65) mapped to partDOptOutIndex (MemberEligibilityVO.md:L273); Boolean/indicator legal values (Y/N, 1/0, blank) not stated in MEMBERELIGIBILITY.csv, .CPY, or VO.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-22",
+        "topic": "Lock-in assignment reason code list",
+        "evidence": "LCK-ASGN-RSN present in layout (MEMBERELIGIBILITY.csv:L98) mapped to lockinAssignmentReasonCode (MemberEligibilityVO.md:L409); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-23",
+        "topic": "Lock-in change reason code list",
+        "evidence": "LCK-CHG-RSN present in layout (MEMBERELIGIBILITY.csv:L99) mapped to lockinChangeReasonCode (MemberEligibilityVO.md:L413); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-24",
+        "topic": "Immigrant admission status code list",
+        "evidence": "IMM-ADMS-STAT present in layout (MEMBERELIGIBILITY.csv:L111) mapped to immigrantAdmissionStatus (MemberEligibilityVO.md:L464); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-25",
+        "topic": "Per-field nullability / mandatory rules",
+        "evidence": "VO has sparse nullability comments (e.g. medicareIdNumber, healthHomeNPIId); T-MSIS Necessity in data-elements.md is not aligned field-by-field to MES layout or JSR-380 constraints in MemberEligibilityVO.md.",
+        "owner": "MMIS SME",
+        "priority": "P2",
+    },
+    {
+        "id": "GAP-26",
+        "topic": "Name / free-text character class",
+        "evidence": "Name and address PIC X fields (e.g. MBR-LAST-NM, MBR-FRST-NM) have no allowed character class documented in MEMBERELIGIBILITY.csv, .CPY, or MemberEligibilityVO.md beyond @Size.",
+        "owner": "MMIS SME",
+        "priority": "P3",
+    },
 ]
 
 
@@ -293,9 +349,14 @@ def load_vvl_members() -> list[dict]:
         path = VVL_DIR / filename
         with path.open(newline="", encoding="utf-8") as fh:
             rows_csv = list(csv.DictReader(fh))
-        if not rows_csv:
+        confirmed = [
+            (idx, row)
+            for idx, row in enumerate(rows_csv)
+            if (row.get("status") or "").strip() == "CONFIRMED"
+        ]
+        if not confirmed:
             continue
-        de = (rows_csv[0].get("t_msis_data_element") or "").strip()
+        de = (confirmed[0][1].get("t_msis_data_element") or "").strip()
         members.append(
             {
                 "de": de,
@@ -306,7 +367,7 @@ def load_vvl_members() -> list[dict]:
                         "description": row["description"],
                         "source_ref": f"{filename}:L{idx + 2}",
                     }
-                    for idx, row in enumerate(rows_csv)
+                    for idx, row in confirmed
                 ],
             }
         )
