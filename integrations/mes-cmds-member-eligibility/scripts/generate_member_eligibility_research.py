@@ -83,7 +83,7 @@ MAPPING: dict[str, tuple[str, int, str, str | None, str | None]] = {
     "MCR-PTD-OPT-IND": ("partDOptOutIndex", 273, "String", None, None),
     "MCR-PTD-CNTR-ID": ("partDPBPContractId", 277, "String", None, None),
     "MCR-PTD-PLAN-ID": ("partDPBPPlanID", 281, "String", None, None),
-    "CS-MGMT-NM": ("caseMgmtName", 287, "String", None, None),
+    "CS-MGMT-NM": ("caseMgmtName", 286, "String", None, None),
     "CS-ADR-LN1": ("caseMgmtAdressLine1", 290, "String", None, None),
     "CS-ADR-LN2": ("caseMgmtAddressLine2", 294, "String", None, None),
     "CS-CITY-NM": ("caseMgmtAddressCity", 298, "String", None, None),
