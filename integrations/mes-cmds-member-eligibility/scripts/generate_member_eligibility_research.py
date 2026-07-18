@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Generate research/Integration_Research_MemberEligibility.yaml from layout + VO."""
+"""Generate research/Integration_Research_MemberEligibility.yaml from CPY + VO.
+
+Step 0 regenerates source/MEMBERELIGIBILITY_generated.csv via tools/cpy_to_csv.py.
+"""
 from __future__ import annotations
 
 import csv
 import hashlib
+import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -11,9 +16,13 @@ import yaml
 INTEGRATION_ROOT = Path(__file__).resolve().parent.parent
 LIBRARY_ROOT = INTEGRATION_ROOT / "../../medicare-validation-rules"
 VVL_DIR = LIBRARY_ROOT / "rules/eligibility/value-lists"
-CSV_PATH = INTEGRATION_ROOT / "source/MEMBERELIGIBILITY.csv"
+CPY_PATH = INTEGRATION_ROOT / "source/MEMBERELIGIBILITY.CPY"
+GENERATED_CSV_PATH = INTEGRATION_ROOT / "source/MEMBERELIGIBILITY_generated.csv"
+GOLDEN_CSV_PATH = INTEGRATION_ROOT / "source/MEMBERELIGIBILITY.csv"
+CPY_TO_CSV = INTEGRATION_ROOT / "tools/cpy_to_csv.py"
 VO_PATH = INTEGRATION_ROOT / "target/MemberEligibilityVO.md"
 OUT_PATH = INTEGRATION_ROOT / "research/Integration_Research_MemberEligibility.yaml"
+LAYOUT_REF = "MEMBERELIGIBILITY_generated.csv"
 
 # source_field -> (target_attribute, vo_line, java_type, t_msis_rule, vvl_file)
 MAPPING: dict[str, tuple[str, int, str, str | None, str | None]] = {
@@ -48,11 +57,11 @@ MAPPING: dict[str, tuple[str, int, str, str | None, str | None]] = {
     "MBR-GNDR-CD": ("gender", 126, "String", "ELG.002.023", "sex.csv"),
     "MBR-RACE-CD": ("race", 131, "String", "ELG.016.213", None),
     "MBR-LANG-CD": ("languageCode", 135, "String", "ELG.003.046", "preferred-language.csv"),
-    "MBR-DSBL-TYP": ("diabilityType", 139, "String", None, None),
+    "MBR-DSBL-TYP": ("diabilityType", 139, "String", "ELG.017.224", None),
     "MBR-PREG-DUE-DT": ("pregnancyDueDate", 143, "LocalDate", None, None),
     "MBR-NPI-ID": ("npiId", 147, "String", None, None),
     "MBR-ELIG-CAT": ("categoryOfEligibility", 153, "String", "ELG.005.087", "eligibility-group.csv"),
-    "MBR-TERM-RSN-CD": ("eligibilityTerminationReasonCode", 157, "String", None, None),
+    "MBR-TERM-RSN-CD": ("eligibilityTerminationReasonCode", 157, "String", "ELG.005.095", None),
     "MBR-FED-MCH-CD": ("federalMatchCode", 161, "String", None, None),
     "HH-NPI-ID": ("healthHomeNPIId", 166, "String", None, None),
     "HH-BEG-DT": ("healthHomeBeginDate", 170, "LocalDate", None, None),
@@ -132,7 +141,7 @@ MAPPING: dict[str, tuple[str, int, str, str | None, str | None]] = {
         "english-proficiency.csv",
     ),
     "HH-SIZE-NUM": ("householdSize", 461, "Integer", "ELG.003.047", "household-size.csv"),
-    "IMM-ADMS-STAT": ("immigrantAdmissionStatus", 464, "String", None, None),
+    "IMM-ADMS-STAT": ("immigrantAdmissionStatus", 464, "String", "ELG.003.042", None),
     "MC-END-DT": ("mcEndDate", 468, "LocalDate", None, None),
     "MC-BEG-DT": ("mcBeginDate", 472, "LocalDate", None, None),
     "SRC-FILE-NM": ("fileName", 476, "String", None, None),
@@ -153,21 +162,21 @@ GAPS = [
     {
         "id": "GAP-01",
         "topic": "Source character encoding",
-        "evidence": "MEMBERELIGIBILITY.csv, MEMBERELIGIBILITY.CPY, and MemberEligibilityVO.md do not specify charset (e.g. ISO-8859-1 vs EBCDIC).",
+        "evidence": "MEMBERELIGIBILITY_generated.csv, MEMBERELIGIBILITY.CPY, and MemberEligibilityVO.md do not specify charset (e.g. ISO-8859-1 vs EBCDIC).",
         "owner": "MMIS SME",
         "priority": "P1",
     },
     {
         "id": "GAP-02",
         "topic": "CTR-SRVC-DT to serviceDate (YearMonth)",
-        "evidence": "Source PIC X(08) at positions 9-16 (MEMBERELIGIBILITY.csv:L3); VO serviceDate uses pattern yyyyMM (MemberEligibilityVO.md:L8-L10). Truncation/padding rules not stated in artifacts.",
+        "evidence": "Source PIC X(08) at positions 9-16 (MEMBERELIGIBILITY_generated.csv:L3); VO serviceDate uses pattern yyyyMM (MemberEligibilityVO.md:L8-L10). Truncation/padding rules not stated in artifacts.",
         "owner": "MMIS SME",
         "priority": "P1",
     },
     {
         "id": "GAP-03",
         "topic": "MBR-GNDR-CD width and code normalization",
-        "evidence": "Source PIC X(04) at 435-438 (MEMBERELIGIBILITY.csv:L30); VO gender @Size(max=1) with pattern [MFU]? (MemberEligibilityVO.md:L126-L129); T-MSIS Sex is X(1) per ELG.002.023.",
+        "evidence": "Source PIC X(04) at 435-438 (MEMBERELIGIBILITY_generated.csv:L30); VO gender @Size(max=1) with pattern [MFU]? (MemberEligibilityVO.md:L126-L129); T-MSIS Sex is X(1) per ELG.002.023.",
         "owner": "MMIS SME",
         "priority": "P1",
     },
@@ -181,14 +190,14 @@ GAPS = [
     {
         "id": "GAP-05",
         "topic": "Eligibility termination reason code",
-        "evidence": "MBR-TERM-RSN-CD present in layout (MEMBERELIGIBILITY.csv:L37); no matching CONFIRMED VVL CSV in value-lists/ and no decode table in MemberEligibilityVO.md.",
+        "evidence": "MBR-TERM-RSN-CD mapped to eligibilityTerminationReasonCode with t_msis_rule ELG.005.095 (MEMBERELIGIBILITY_generated.csv:L37; MemberEligibilityVO.md:L157); Eligibility Termination Reason List is not present as a CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-06",
         "topic": "Federal match code",
-        "evidence": "MBR-FED-MCH-CD present in layout (MEMBERELIGIBILITY.csv:L38); no CONFIRMED VVL CSV in value-lists/ for federalMatchCode.",
+        "evidence": "MBR-FED-MCH-CD present in layout (MEMBERELIGIBILITY_generated.csv:L38); no CONFIRMED VVL CSV in value-lists/ for federalMatchCode.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
@@ -202,7 +211,7 @@ GAPS = [
     {
         "id": "GAP-08",
         "topic": "HH-SIZE-NUM binary COMP",
-        "evidence": "Source PIC 9(04) COMP (2 bytes) at 1422-1423 (MEMBERELIGIBILITY.csv:L110); VO householdSize is Integer (MemberEligibilityVO.md:L461-L462); COMP endianness not stated in MEMBERELIGIBILITY.CPY.",
+        "evidence": "Source PIC 9(04) COMP (2 bytes) at 1422-1423 (MEMBERELIGIBILITY_generated.csv:L110); VO householdSize is Integer (MemberEligibilityVO.md:L461-L462); COMP endianness not stated in MEMBERELIGIBILITY.CPY.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
@@ -223,7 +232,7 @@ GAPS = [
     {
         "id": "GAP-11",
         "topic": "Record framing and file terminator",
-        "evidence": "MEMBERELIGIBILITY.csv defines a 1473-byte fixed layout (SRC-FILE-NM ends at 1473); no LF/CRLF, RDW, or block descriptor documented in .CPY or VO.",
+        "evidence": "MEMBERELIGIBILITY_generated.csv defines a 1473-byte fixed layout (SRC-FILE-NM ends at 1473); no LF/CRLF, RDW, or block descriptor documented in .CPY or VO.",
         "owner": "MMIS SME",
         "priority": "P1",
     },
@@ -244,7 +253,7 @@ GAPS = [
     {
         "id": "GAP-14",
         "topic": "Natural-key format and validation",
-        "evidence": "No composite ingest key (e.g. medicaidCardId + serviceDate + providerId) documented in MEMBERELIGIBILITY.csv, .CPY, or MemberEligibilityVO.md.",
+        "evidence": "No composite ingest key (e.g. medicaidCardId + serviceDate + providerId) documented in MEMBERELIGIBILITY_generated.csv, .CPY, or MemberEligibilityVO.md.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
@@ -265,56 +274,56 @@ GAPS = [
     {
         "id": "GAP-17",
         "topic": "Level of care code width",
-        "evidence": "Source LTC-LVL-CARE-CD PIC X(04) at 531-534 (MEMBERELIGIBILITY.csv:L45); VO levelOfCare @Size(max=2) (MemberEligibilityVO.md:L191-L193); T-MSIS ELG.005.088 is X(3). Truncation/padding rules not stated.",
+        "evidence": "Source LTC-LVL-CARE-CD PIC X(04) at 531-534 (MEMBERELIGIBILITY_generated.csv:L45); VO levelOfCare @Size(max=2) (MemberEligibilityVO.md:L191-L193); T-MSIS ELG.005.088 is X(3). Truncation/padding rules not stated.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-18",
         "topic": "Marital status code width",
-        "evidence": "Source MRTL-STAT-CD PIC X(04) at 1380-1383 (MEMBERELIGIBILITY.csv:L106); VO maritalStatus @Size(max=1) (MemberEligibilityVO.md:L444-L446); T-MSIS ELG.003.034 uses 2-character codes (marital-status.csv). Normalization not stated.",
+        "evidence": "Source MRTL-STAT-CD PIC X(04) at 1380-1383 (MEMBERELIGIBILITY_generated.csv:L106); VO maritalStatus @Size(max=1) (MemberEligibilityVO.md:L444-L446); T-MSIS ELG.003.034 uses 2-character codes (marital-status.csv). Normalization not stated.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-19",
         "topic": "Disability type code list",
-        "evidence": "MBR-DSBL-TYP present in layout (MEMBERELIGIBILITY.csv:L33) mapped to diabilityType (MemberEligibilityVO.md:L139); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "evidence": "MBR-DSBL-TYP mapped to diabilityType with t_msis_rule ELG.017.224 (MEMBERELIGIBILITY_generated.csv:L33; MemberEligibilityVO.md:L139); Disability Type Code List is not present as a CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-20",
         "topic": "Health home level code list",
-        "evidence": "HH-LVL-CD present in layout (MEMBERELIGIBILITY.csv:L42) mapped to healthHomeLevelCode (MemberEligibilityVO.md:L178); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "evidence": "HH-LVL-CD present in layout (MEMBERELIGIBILITY_generated.csv:L42) mapped to healthHomeLevelCode (MemberEligibilityVO.md:L178); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-21",
         "topic": "Part D opt-out indicator legal values",
-        "evidence": "MCR-PTD-OPT-IND present in layout (MEMBERELIGIBILITY.csv:L65) mapped to partDOptOutIndex (MemberEligibilityVO.md:L273); Boolean/indicator legal values (Y/N, 1/0, blank) not stated in MEMBERELIGIBILITY.csv, .CPY, or VO.",
+        "evidence": "MCR-PTD-OPT-IND present in layout (MEMBERELIGIBILITY_generated.csv:L65) mapped to partDOptOutIndex (MemberEligibilityVO.md:L273); Boolean/indicator legal values (Y/N, 1/0, blank) not stated in MEMBERELIGIBILITY_generated.csv, .CPY, or VO.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-22",
         "topic": "Lock-in assignment reason code list",
-        "evidence": "LCK-ASGN-RSN present in layout (MEMBERELIGIBILITY.csv:L98) mapped to lockinAssignmentReasonCode (MemberEligibilityVO.md:L409); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "evidence": "LCK-ASGN-RSN present in layout (MEMBERELIGIBILITY_generated.csv:L98) mapped to lockinAssignmentReasonCode (MemberEligibilityVO.md:L409); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-23",
         "topic": "Lock-in change reason code list",
-        "evidence": "LCK-CHG-RSN present in layout (MEMBERELIGIBILITY.csv:L99) mapped to lockinChangeReasonCode (MemberEligibilityVO.md:L413); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "evidence": "LCK-CHG-RSN present in layout (MEMBERELIGIBILITY_generated.csv:L99) mapped to lockinChangeReasonCode (MemberEligibilityVO.md:L413); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
     {
         "id": "GAP-24",
         "topic": "Immigrant admission status code list",
-        "evidence": "IMM-ADMS-STAT present in layout (MEMBERELIGIBILITY.csv:L111) mapped to immigrantAdmissionStatus (MemberEligibilityVO.md:L464); no CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
+        "evidence": "IMM-ADMS-STAT mapped to immigrantAdmissionStatus with t_msis_rule ELG.003.042 (MEMBERELIGIBILITY_generated.csv:L111; MemberEligibilityVO.md:L464); Immigration Status List is not present as a CONFIRMED VVL CSV under rules/eligibility/value-lists/.",
         "owner": "MMIS SME",
         "priority": "P2",
     },
@@ -328,7 +337,7 @@ GAPS = [
     {
         "id": "GAP-26",
         "topic": "Name / free-text character class",
-        "evidence": "Name and address PIC X fields (e.g. MBR-LAST-NM, MBR-FRST-NM) have no allowed character class documented in MEMBERELIGIBILITY.csv, .CPY, or MemberEligibilityVO.md beyond @Size.",
+        "evidence": "Name and address PIC X fields (e.g. MBR-LAST-NM, MBR-FRST-NM) have no allowed character class documented in MEMBERELIGIBILITY_generated.csv, .CPY, or MemberEligibilityVO.md beyond @Size.",
         "owner": "MMIS SME",
         "priority": "P3",
     },
@@ -374,9 +383,29 @@ def load_vvl_members() -> list[dict]:
     return members
 
 
+def ensure_generated_layout() -> Path:
+    """Regenerate *_generated.csv from the copybook; optionally compare to golden CSV."""
+    if not CPY_PATH.is_file():
+        raise FileNotFoundError(f"Copybook not found: {CPY_PATH}")
+    if not CPY_TO_CSV.is_file():
+        raise FileNotFoundError(f"Converter not found: {CPY_TO_CSV}")
+
+    cmd = [sys.executable, str(CPY_TO_CSV), str(CPY_PATH)]
+    if GOLDEN_CSV_PATH.is_file():
+        cmd.extend(["--compare", str(GOLDEN_CSV_PATH)])
+
+    result = subprocess.run(cmd, cwd=INTEGRATION_ROOT, check=False)
+    if result.returncode != 0:
+        raise RuntimeError(f"cpy_to_csv.py failed with exit code {result.returncode}")
+    if not GENERATED_CSV_PATH.is_file():
+        raise FileNotFoundError(f"Expected generated layout missing: {GENERATED_CSV_PATH}")
+    return GENERATED_CSV_PATH
+
+
 def main() -> None:
+    layout_csv = ensure_generated_layout()
     field_mappings: list[dict] = []
-    with CSV_PATH.open(newline="", encoding="utf-8") as fh:
+    with layout_csv.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
         for line_no, row in enumerate(reader, start=2):
             name = row["field_name"]
@@ -385,7 +414,7 @@ def main() -> None:
             target, vo_line, java_type, rule, vvl = MAPPING[name]
             entry: dict = {
                 "source_field": name,
-                "source_ref": f"MEMBERELIGIBILITY.csv:L{line_no}",
+                "source_ref": f"{LAYOUT_REF}:L{line_no}",
                 "target_attribute": target,
                 "target_ref": f"MemberEligibilityVO.md:L{vo_line}",
                 "derivation": "INFERRED",
@@ -404,11 +433,17 @@ def main() -> None:
             "flow": "Member Eligibility",
             "dictionary_version": "4.0.33",
             "sources": [
-                {"path": "source/MEMBERELIGIBILITY.csv", "sha256": sha256_file(CSV_PATH)},
-                {"path": "target/MemberEligibilityVO.md", "sha256": sha256_file(VO_PATH)},
                 {
                     "path": "source/MEMBERELIGIBILITY.CPY",
-                    "sha256": sha256_file(INTEGRATION_ROOT / "source/MEMBERELIGIBILITY.CPY"),
+                    "sha256": sha256_file(CPY_PATH),
+                },
+                {
+                    "path": "source/MEMBERELIGIBILITY_generated.csv",
+                    "sha256": sha256_file(layout_csv),
+                },
+                {
+                    "path": "target/MemberEligibilityVO.md",
+                    "sha256": sha256_file(VO_PATH),
                 },
             ],
         },

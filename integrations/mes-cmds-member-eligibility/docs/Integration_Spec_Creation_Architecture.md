@@ -197,7 +197,7 @@ Provenance registry: `MANIFEST.yaml` pins dictionary **v4.0.33** and paths to pr
 
 ```text
 INPUTS (integration + library)
-  MEMBERELIGIBILITY.csv + .CPY
+  MEMBERELIGIBILITY.CPY → *_generated.csv
   MemberEligibilityVO.md
   data-elements.md + value-lists/*.csv
         |
@@ -231,7 +231,7 @@ INPUTS (integration + library)
 ```text
 Run Integration Spec Research per @prompts/integration-spec-research.md.
 - Flow: Member Eligibility
-- Source layout: @source/MEMBERELIGIBILITY.csv
+- Source layout: @source/MEMBERELIGIBILITY.CPY
 - Target VO: @target/MemberEligibilityVO.md
 - Validation rules: @rules/eligibility/data-elements.md
 - Value lists: @rules/eligibility/value-lists/

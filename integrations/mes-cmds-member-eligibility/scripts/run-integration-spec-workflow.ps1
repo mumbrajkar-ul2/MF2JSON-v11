@@ -159,6 +159,12 @@ $ResearchPath = Join-Path $IntegrationRoot $config.researchYaml
 $SpecPath = Join-Path $IntegrationRoot $config.specMd
 $SourceLayout = Join-Path $IntegrationRoot $config.sourceLayout
 $TargetVO = Join-Path $IntegrationRoot $config.targetVO
+$CpyToCsv = Join-Path $IntegrationRoot "tools\cpy_to_csv.py"
+$GeneratedLayoutCsv = if ($config.PSObject.Properties.Name -contains "generatedLayoutCsv") {
+    Join-Path $IntegrationRoot $config.generatedLayoutCsv
+} else {
+    $null
+}
 
 $ValidateResearch = Join-Path $LibraryRoot "tools\validate_research.py"
 $ValidateSpec = Join-Path $LibraryRoot "tools\validate_spec_against_research.py"
@@ -213,6 +219,31 @@ if (Test-Path $Requirements) {
         Write-StageLog -StageId "0" -Message "pip install -r requirements.txt failed" -Level "FAIL"
         exit 1
     }
+}
+
+if (-not (Test-Path $CpyToCsv)) {
+    Write-StageLog -StageId "0" -Message "Missing layout converter: $CpyToCsv" -Level "FAIL"
+    exit 1
+}
+
+# Pre-generate tabular layout from copybook when BA input is a .CPY
+if ($SourceLayout -match '\.(CPY|cpy)$') {
+    Write-StageLog -StageId "0" -Message "Generating layout CSV from copybook via cpy_to_csv.py"
+    $convertArgs = @($SourceLayout)
+    $goldenCsv = Join-Path $IntegrationRoot "source\MEMBERELIGIBILITY.csv"
+    if (Test-Path $goldenCsv) {
+        $convertArgs += @("--compare", $goldenCsv)
+    }
+    $code = Invoke-PythonTool -ToolPath $CpyToCsv -Arguments $convertArgs
+    if ($code -ne 0) {
+        Write-StageLog -StageId "0" -Message "cpy_to_csv.py failed (exit $code)" -Level "FAIL"
+        exit $code
+    }
+    if ($GeneratedLayoutCsv -and -not (Test-Path $GeneratedLayoutCsv)) {
+        Write-StageLog -StageId "0" -Message "Expected generated layout missing: $GeneratedLayoutCsv" -Level "FAIL"
+        exit 1
+    }
+    Write-StageLog -StageId "0" -Message "Layout CSV generated" -Level "PASS"
 }
 
 Write-StageLog -StageId "0" -Message "Setup OK (library: $LibraryRoot)" -Level "PASS"

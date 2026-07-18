@@ -28,9 +28,15 @@ Prefer the script when on Windows:
 
 Confirm paths exist:
 
-- Integration `source/` layout and `target/` VO
+- Integration `source/*.CPY` (copybook) and `target/` VO
 - Library `rules/eligibility/data-elements.md` and `value-lists/`
-- Python and validator tools on PATH
+- Python and validator tools on PATH (including integration `tools/cpy_to_csv.py`)
+
+Optional Stage 0 pre-step: regenerate tabular layout from the copybook:
+
+```powershell
+python tools/cpy_to_csv.py source/MEMBERELIGIBILITY.CPY
+```
 
 ## Stage 1 — Research (Chat 1)
 
@@ -39,7 +45,7 @@ Emit this prompt (adjust paths from `scripts/workflow.config.json`):
 ```text
 Run Integration Spec Research per @prompts/integration-spec-research.md.
 - Flow: Member Eligibility
-- Source layout: @source/MEMBERELIGIBILITY.csv
+- Source layout: @source/MEMBERELIGIBILITY.CPY
 - Target VO: @target/MemberEligibilityVO.md
 - Validation rules: @rules/eligibility/data-elements.md
 - Value lists: @rules/eligibility/value-lists/
@@ -47,7 +53,9 @@ Run Integration Spec Research per @prompts/integration-spec-research.md.
 Write research/Integration_Research_MemberEligibility.yaml only. Do not write the spec.
 ```
 
-**Cursor Task:** Only in Turn 1 — `explore`, `readonly: true` for heavy CSV/VO/rules scans. Parent writes the YAML.
+Research Step 0 regenerates `source/MEMBERELIGIBILITY_generated.csv` via `tools/cpy_to_csv.py` and maps from that CSV.
+
+**Cursor Task:** Only in Turn 1 — `explore`, `readonly: true` for heavy CSV/VO/rules scans (after layout CSV exists). Parent writes the YAML.
 
 ## Stage 1b — Validate research (blocking)
 

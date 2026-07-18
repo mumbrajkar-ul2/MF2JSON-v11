@@ -69,7 +69,7 @@
             "type": "string",
             "minLength": 1,
             "pattern": ".+:.+",
-            "description": "Provenance: file:line or file:Lrow (e.g. MEMBERELIGIBILITY.csv:L30)"
+            "description": "Provenance: file:line or file:Lrow (e.g. MEMBERELIGIBILITY_generated.csv:L30)"
           },
           "target_attribute": {
             "type": "string",

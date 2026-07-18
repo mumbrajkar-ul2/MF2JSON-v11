@@ -10,10 +10,13 @@ spec-generation procedures, validators, and always-on conventions live in the sh
 ```text
 mes-cmds-member-eligibility/
 ├── source/
-│   ├── MEMBERELIGIBILITY.CPY    ← original COBOL copybook (record of truth)
-│   └── MEMBERELIGIBILITY.csv    ← derived tabular layout (field, PIC, storage, start, end, length)
+│   ├── MEMBERELIGIBILITY.CPY              ← COBOL copybook (BA / Research input; record of truth)
+│   ├── MEMBERELIGIBILITY_generated.csv    ← derived via tools/cpy_to_csv.py (Research maps from this)
+│   └── MEMBERELIGIBILITY.csv              ← optional golden reference for --compare only
 ├── target/
 │   └── MemberEligibilityVO.md   ← CMdS canonical Java VO
+├── tools/
+│   └── cpy_to_csv.py            ← copybook → *_generated.csv
 ├── research/
 │   └── Integration_Research_MemberEligibility.yaml  ← Turn 1 output (review before Write)
 ├── spec/
@@ -25,8 +28,8 @@ mes-cmds-member-eligibility/
 ```
 
 - Computed record length: **1473 bytes**, **113 fields** (`COMP` = 2 bytes, each `COMP-3 S9(7)V99` = 5 bytes).
-- `MEMBERELIGIBILITY.csv` is derived from the copybook for the "from the CSV" mapping convention; the
-  `.CPY` remains the record of truth.
+- Research attaches the **`.CPY`**, then regenerates `MEMBERELIGIBILITY_generated.csv` with
+  `python tools/cpy_to_csv.py source/MEMBERELIGIBILITY.CPY` before field mapping.
 
 ## How to (re)generate the spec (two-phase workflow)
 
@@ -83,7 +86,7 @@ Send:
 ```text
 Run Integration Spec Research per @prompts/integration-spec-research.md.
 - Flow: Member Eligibility
-- Source layout: @source/MEMBERELIGIBILITY.csv
+- Source layout: @source/MEMBERELIGIBILITY.CPY
 - Target VO: @target/MemberEligibilityVO.md
 - Validation rules: @rules/eligibility/data-elements.md
 - Value lists: @rules/eligibility/value-lists/

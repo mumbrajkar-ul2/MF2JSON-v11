@@ -1,5 +1,5 @@
 ---
-description: Research phase — read-only cite-only YAML artifact; no spec prose or assumptions
+description: Research phase — cite-only YAML artifact; CPY source; derived layout CSV allowed
 alwaysApply: false
 ---
 
@@ -8,11 +8,14 @@ alwaysApply: false
 Invoke this rule when running `@prompts/integration-spec-research.md` (Turn 1).
 
 ## Scope
-- **Read-only:** Input artifacts only (`source/`, `target/`, `rules/`). Do not modify files.
-- **Output:** Single YAML file in integration project `research/` folder only.
+- **BA input truth:** COBOL copybook (`.CPY`) attached as source layout.
+- **Derived layout (allowed write):** Regenerate `source/<stem>_generated.csv` via the integration
+  project's `tools/cpy_to_csv.py` before field mapping. Do not hand-edit that CSV.
+- **Output:** `research/Integration_Research_<Flow>.yaml` (plus the generated layout CSV above).
 - **Schema:** Conform to `schemas/integration-research.schema.json`.
 
 ## Hard prohibitions
+- Do not edit `.CPY`, golden/hand-maintained layout CSVs, target VO, rules, or VVL CSVs.
 - No Integration Specification prose (§1–§5).
 - No MapStruct interfaces, API endpoints, or Word export.
 - No `ASM-NN` entries — `assumptions: []` must remain empty.
@@ -20,11 +23,14 @@ Invoke this rule when running `@prompts/integration-spec-research.md` (Turn 1).
 - Do not invent VVL codes; copy CONFIRMED CSV rows verbatim into `vvl_members`.
 
 ## Required discipline
-- Every fact: `source_ref` (`file:Lnn` or CSV row reference).
+- Step 0: run `python tools/cpy_to_csv.py <copybook>` (integration project). Fail Turn 1 if convert ≠ 0.
+- Map fields from `*_generated.csv`; cite `source_ref` as `<stem>_generated.csv:Lnn`.
+- `meta.sources` must include the `.CPY` and the `*_generated.csv` (SHA-256 each).
 - Gaps only in `gaps[]` — register missing facts with `evidence` citing files searched.
 - `derivation: INFERRED` when mapping is positional/name-based, not explicit in artifacts.
-- Complete field coverage: one `field_mappings` row per source layout field.
+- Complete field coverage: one `field_mappings` row per generated-layout field.
 - Run `python tools/validate_research.py` before finishing.
 
 ## Subagent guidance
-Prefer readonly exploration (`Task` with `readonly: true`) when scanning large artifacts.
+Prefer readonly exploration (`Task` with `readonly: true`) when scanning large artifacts
+(after the layout CSV has been generated).

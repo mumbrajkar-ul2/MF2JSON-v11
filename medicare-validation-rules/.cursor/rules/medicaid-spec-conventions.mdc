@@ -15,7 +15,9 @@ Full procedures: `prompts/integration-spec-research.md` and `prompts/integration
 ## Rule library
 - Authoritative validation rules: `rules/<domain>/data-elements.md` (+ `.csv`).
 - Valid-value-list **members**: `rules/<domain>/value-lists/*.csv`.
-- Read generated text, never binary `source.xlsx`. Pin dictionary version from `MANIFEST.yaml`.
+- Source layout for Research: BA attaches COBOL **`.CPY`**; agent regenerates `*_generated.csv` via
+  integration `tools/cpy_to_csv.py` for field mapping.
+- Read generated text rules, never binary `source.xlsx`. Pin dictionary version from `MANIFEST.yaml`.
 
 ## Cite, never invent
 - Tag every applied data-element rule as **`Medicaid_Rule (ELG.xxx.xxx)`** (System DE Number).

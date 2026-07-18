@@ -20,7 +20,7 @@ YAML — not raw CSV, VO, or rules.
 ```text
 Run Integration Spec Research per @prompts/integration-spec-research.md.
 - Flow: Member Eligibility
-- Source layout: @source/MEMBERELIGIBILITY.csv
+- Source layout: @source/MEMBERELIGIBILITY.CPY
 - Target VO: @target/MemberEligibilityVO.md
 - Validation rules: @rules/eligibility/data-elements.md
 - Value lists: @rules/eligibility/value-lists/

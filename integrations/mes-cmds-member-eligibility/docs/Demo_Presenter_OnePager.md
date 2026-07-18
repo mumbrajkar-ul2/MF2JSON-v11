@@ -58,8 +58,9 @@ Use one slide per diagram in `docs/diagrams/` (render PNGs: `python docs/diagram
 
 | Show | Say |
 |------|-----|
-| `source/MEMBERELIGIBILITY.CPY` | Original copybook — record of truth |
-| `source/MEMBERELIGIBILITY.csv` | Tabular layout for mapping (113 fields) |
+| `source/MEMBERELIGIBILITY.CPY` | Original copybook — BA / Research input (record of truth) |
+| `source/MEMBERELIGIBILITY_generated.csv` | Tabular layout via `tools/cpy_to_csv.py` (113 fields) |
+| `source/MEMBERELIGIBILITY.csv` | Optional golden for `--compare` only |
 | `target/MemberEligibilityVO.md` | CMdS canonical VO |
 | `medicare-validation-rules/rules/eligibility/` | Shared read-only T-MSIS rules + VVL CSVs |
 | `MANIFEST.yaml` | Dictionary version pinned to **4.0.33** |
@@ -90,7 +91,7 @@ Use one slide per diagram in `docs/diagrams/` (render PNGs: `python docs/diagram
 ```text
 Run Integration Spec Research per @prompts/integration-spec-research.md.
 - Flow: Member Eligibility
-- Source layout: @source/MEMBERELIGIBILITY.csv
+- Source layout: @source/MEMBERELIGIBILITY.CPY
 - Target VO: @target/MemberEligibilityVO.md
 - Validation rules: @rules/eligibility/data-elements.md
 - Value lists: @rules/eligibility/value-lists/
