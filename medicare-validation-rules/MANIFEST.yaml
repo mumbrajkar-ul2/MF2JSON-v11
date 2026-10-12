@@ -25,6 +25,12 @@ rule_sets:
     generated_text:
       - rules/eligibility/data-elements.csv
       - rules/eligibility/data-elements.md
+    length_alignment:
+      description: >-
+        Size / length coding phrases in data-elements.* are aligned to CMdS
+        MemberEligibilityVO @Size(max) via tools/align_data_elements_to_vo.py
+        (after xlsx_to_text.py). source.xlsx remains the federal T-MSIS record of truth.
+      tool: tools/align_data_elements_to_vo.py
     segments:
       - ELG00001 FILE-HEADER-RECORD-ELIGIBILITY
       - ELG00002 PRIMARY-DEMOGRAPHICS-ELIGIBILITY
@@ -57,6 +63,18 @@ converter:
   tool: tools/xlsx_to_text.py
   command: "python tools/xlsx_to_text.py rules/eligibility/source.xlsx"
   dependency: openpyxl
+
+vo_length_aligner:
+  tool: tools/align_data_elements_to_vo.py
+  command: >-
+    python tools/align_data_elements_to_vo.py
+    --vo ../integrations/mes-cmds-member-eligibility/target/MemberEligibilityVO.md
+    --base <fresh-tmsis-data-elements.csv>
+    --out-dir rules/eligibility
+  note: >-
+    Writes VO-aligned data-elements.* into rules/eligibility/.
+    Re-run xlsx_to_text.py first when refreshing from source.xlsx, then align
+    (use a temp base CSV if overwriting the same folder).
 
 spec_export:
   tool: tools/md_to_docx.py

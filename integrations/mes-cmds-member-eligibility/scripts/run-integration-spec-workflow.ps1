@@ -187,7 +187,7 @@ foreach ($path in @($SourceLayout, $TargetVO)) {
     }
 }
 
-$rulesMd = Join-Path $LibraryRoot "rules\eligibility\data-elements.md"
+$rulesMd = Join-Path $LibraryRoot (($config.validationRules -replace "/", "\"))
 $vvlDir = Join-Path $LibraryRoot "rules\eligibility\value-lists"
 if (-not (Test-Path $rulesMd)) {
     Write-StageLog -StageId "0" -Message "Library rules not found: $rulesMd" -Level "FAIL"
@@ -213,9 +213,18 @@ try {
 }
 
 if (Test-Path $Requirements) {
-    $pipOutput = & python -m pip install -r $Requirements -q 2>&1
+    # pip writes notices to stderr; with $ErrorActionPreference=Stop, 2>&1 turns
+    # those into terminating NativeCommandError even when exit code is 0.
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try {
+        $pipOutput = & python -m pip install -r $Requirements -q 2>&1
+        $pipCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $prevEap
+    }
     if ($pipOutput) { $pipOutput | ForEach-Object { Write-Host $_ } }
-    if ($LASTEXITCODE -ne 0) {
+    if ($pipCode -ne 0) {
         Write-StageLog -StageId "0" -Message "pip install -r requirements.txt failed" -Level "FAIL"
         exit 1
     }

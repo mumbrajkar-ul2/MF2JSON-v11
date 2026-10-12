@@ -50,10 +50,15 @@ medicare-validation-rules/
 └── rules/
     └── eligibility/
         ├── source.xlsx       ← record of truth (T-MSIS Eligibility dictionary)
-        ├── data-elements.csv ← generated, grep-friendly
+        ├── data-elements.csv ← generated (VO-length-aligned for MES→CMdS)
         ├── data-elements.md  ← generated, human + Cursor readable
         └── value-lists/      ← VVL members (CONFIRMED from CMS VVL workbook; cite in specs)
 ```
+
+For **MES → CMdS** Member Eligibility, `rules/eligibility/data-elements.md` has **Size**
+rules aligned to CMdS `MemberEligibilityVO` `@Size(max)`. Refresh from `source.xlsx` with
+`tools/xlsx_to_text.py`, then re-apply VO lengths with `tools/align_data_elements_to_vo.py`
+(write to `rules/eligibility/`).
 
 Add new rule domains as sibling folders under `rules/` (e.g. `rules/claims/`, `rules/provider/`,
 `rules/managed-care/`), each following the same `source.xlsx` + generated-text + `value-lists/` shape.

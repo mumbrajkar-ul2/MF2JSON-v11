@@ -35,8 +35,10 @@ The deprecated one-shot prompt `prompts/integration-spec-generation.md` redirect
    and `rules/**/data-elements.csv`. The `source.xlsx` is the record of truth but is binary; if you
    must re-derive text, run `tools/xlsx_to_text.py` rather than hand-typing values.
 
-3. **Do not hand-edit generated files.** `data-elements.csv` / `data-elements.md` are produced by
+3. **Do not hand-edit generated files.** `rules/<domain>/data-elements.csv` / `.md` are produced by
    `tools/xlsx_to_text.py`. To change them, change `source.xlsx` and re-run the converter.
+   For MES→CMdS VO length alignment, re-run `tools/align_data_elements_to_vo.py` against a fresh
+   T-MSIS text export (do not hand-edit Size values).
 
 4. **Value lists.** When a rule references a named valid-value list (e.g. "Sex List"), the members
    live under `rules/<domain>/value-lists/`. If a list file is still a stub (members not filled in),

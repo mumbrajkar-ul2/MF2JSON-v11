@@ -148,6 +148,9 @@ python ..\..\medicare-validation-rules\tools\md_to_docx.py spec\Integration_Spec
 ## Notes
 
 - Validation rules pinned to T-MSIS dictionary **v4.0.33** (see the library `MANIFEST.yaml`).
+  `rules/eligibility/data-elements.md` / `.csv` are VO-length-aligned for this MES→CMdS flow
+  (regenerate via `tools/align_data_elements_to_vo.py` in the rules library after refreshing
+  from `source.xlsx` when needed).
 - Value lists under `medicare-validation-rules/rules/eligibility/value-lists/` are populated from the
   [CMS T-MSIS Valid Value List workbook](https://www.medicaid.gov/medicaid/data-systems/downloads/tmsis-data-dictionary-valid-value-list.xlsx).
   Stubbed lists (`status = TODO`) surface as gaps in research and §2 of the spec.
